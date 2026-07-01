@@ -688,6 +688,15 @@
   .product-wrap{align-items:start}
   .product-visual{position:sticky;top:100px}
   @media(max-width:860px){.product-visual{position:static}}
+  /* Product image gallery */
+  .gallery__main{aspect-ratio:1/1;background:#0a0908;border:1px solid var(--smoke-2);border-radius:4px;overflow:hidden;position:relative}
+  .gallery__main img{width:100%;height:100%;object-fit:contain;display:block}
+  .gallery__main::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 70px rgba(0,0,0,.55),inset 0 0 0 1px rgba(198,161,91,.14)}
+  .gallery__thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin-top:.6rem}
+  .gthumb{aspect-ratio:1/1;background:#0a0908;border:1px solid var(--smoke-2);border-radius:3px;overflow:hidden;cursor:pointer;padding:0;transition:border-color .25s ease}
+  .gthumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:.7;transition:opacity .25s ease}
+  .gthumb:hover{border-color:var(--gold-deep)} .gthumb:hover img{opacity:1}
+  .gthumb.active{border-color:var(--gold)} .gthumb.active img{opacity:1}
   .prod-desc{color:var(--bone)!important;font-weight:400!important;margin-top:1.7rem;font-size:1rem;line-height:1.7}
   .prod-bullets{margin-top:1.1rem;margin-bottom:0}
   .prod-bullets li{color:var(--bone);font-size:1rem}
@@ -1328,10 +1337,18 @@
 
     <div class="product-wrap">
       <div class="product-visual reveal">
-        <div class="pedestal">
-          <img src="https://purebloodsupps.com/cdn/shop/files/BENEFITS_1.png" alt="PureTest black and red supplement tub surrounded by five benefit pillars" />
+        <div class="gallery">
+          <div class="gallery__main">
+            <img id="galleryMain" src="puretest-studio.png" alt="PureTest testosterone booster bottle — 60 capsules, 1350mg per serving" />
+          </div>
+          <div class="gallery__thumbs">
+            <button class="gthumb active" type="button" data-src="puretest-studio.png" aria-label="Studio product shot"><img src="puretest-studio.png" alt="PureTest bottle studio shot" /></button>
+            <button class="gthumb" type="button" data-src="puretest-gym.jpg" aria-label="Gym shot with capsules"><img src="puretest-gym.jpg" alt="PureTest bottle in the gym with capsules" /></button>
+            <button class="gthumb" type="button" data-src="puretest-open.jpg" aria-label="Bottle open with capsules"><img src="puretest-open.jpg" alt="PureTest bottle opened beside its capsules" /></button>
+            <button class="gthumb" type="button" data-src="puretest-lineup.jpg" aria-label="Row of bottles"><img src="puretest-lineup.jpg" alt="A row of PureTest bottles" /></button>
+          </div>
         </div>
-        <span class="artifact-tag">180 Capsules · 750mg Per Serving · The Heirloom Formula</span>
+        <span class="artifact-tag">60 Capsules · 1350mg Per Serving · No Limit. Just Legacy.</span>
       </div>
       <div class="product-info reveal d1">
         <div class="buy-box">
@@ -1381,7 +1398,7 @@
           <a href="#shop" class="btn btn-blood" id="bundleCta">Add 3 Tubs — $159.98</a>
           <p class="micro-trust"><span>Third-Party Tested · NATA-Approved · 60-Day Money-Back Guarantee</span><br />Free High-T Blueprint with every order.</p>
         </div>
-        <p class="prod-desc">180 clinical-grade capsules. 750mg of no-BS, no-filler firepower per serving. Powerful herbs and minerals men have relied on for centuries — refined for real, measurable performance. This isn't a vitamin. It's a daily weapon. No limit. Just legacy.</p>
+        <p class="prod-desc">60 clinical-grade capsules. 1350mg of no-BS, no-filler firepower per serving. Powerful herbs and minerals men have relied on for centuries — refined for real, measurable performance. This isn't a vitamin. It's a daily weapon. No limit. Just legacy.</p>
         <ul class="prod-bullets">
           <li><span class="chk">✅</span>Testosterone &amp; Sexual Health</li>
           <li><span class="chk">✅</span>Clinically-Backed Ingredients</li>
@@ -1440,7 +1457,7 @@
         </div>
       </div>
       <div class="ing-panel reveal d1">
-        <img src="https://purebloodsupps.com/cdn/shop/files/NUTRITIONALCONTENT_B.png" alt="PureTest supplement nutritional facts and ingredient panel" />
+        <img src="puretest-open.jpg" alt="PureTest bottle opened beside its clinical-grade capsules" />
       </div>
     </div>
   </div>
@@ -1496,9 +1513,6 @@
       <div class="cmp-feat">Guarantee</div>
       <div class="cmp-cell us"><span class="yes">✓</span> 60-day money-back</div>
       <div class="cmp-cell them"><span class="no">✕</span> 30-day guarantee</div>
-    </div>
-    <div class="cmp-img reveal">
-      <img src="https://purebloodsupps.com/cdn/shop/files/COMPARISON.png" alt="Comparison chart of PureTest versus other brands showing price and checklist advantages" />
     </div>
   </div>
 </section>
@@ -1851,6 +1865,18 @@
       var input = b.querySelector('input'); if(input){ input.checked = true; }
       var label = b.getAttribute('data-cta');
       if(bundleCta && label){ bundleCta.textContent = label; }
+    });
+  });
+
+  // Product image gallery thumbnail swap
+  var gMain = document.getElementById('galleryMain');
+  var gThumbs = document.querySelectorAll('.gthumb');
+  gThumbs.forEach(function(t){
+    t.addEventListener('click', function(){
+      var src = t.getAttribute('data-src'); if(!src || !gMain) return;
+      gMain.src = src;
+      gThumbs.forEach(function(x){ x.classList.remove('active'); });
+      t.classList.add('active');
     });
   });
 
