@@ -838,6 +838,42 @@
   }
   .illus{text-align:center;margin-top:2.4rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-dim)}
 
+  /* --- Cinematic tub hero (replaces the low-res composite image) --- */
+  .tub-stage{position:relative;max-width:430px;margin:0 auto;padding:2.6rem 0 2.4rem;
+    aspect-ratio:1/1.12;display:flex;align-items:center;justify-content:center}
+  .tub-stage::before{content:"";position:absolute;inset:0;z-index:0;
+    background:radial-gradient(44% 38% at 50% 46%,rgba(198,161,91,.30),transparent 70%),
+      radial-gradient(62% 56% at 50% 54%,rgba(123,17,19,.32),transparent 72%)}
+  .tub-stage::after{content:"";position:absolute;inset:5% 7%;border:1px solid rgba(198,161,91,.16);z-index:0}
+  .tub-shot{position:relative;z-index:2;width:60%;height:auto;
+    filter:drop-shadow(0 26px 32px rgba(0,0,0,.75)) drop-shadow(0 0 26px rgba(198,161,91,.14))}
+  .tub-legacy{position:absolute;top:1.5%;left:50%;transform:translateX(-50%);z-index:3;
+    font-family:var(--serif);font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+  .tub-legacy::before,.tub-legacy::after{content:"";display:inline-block;width:18px;height:1px;background:var(--gold-deep);vertical-align:middle;margin:0 .7em}
+  .spec-chip{position:absolute;z-index:4;display:flex;flex-direction:column;align-items:center;min-width:72px;
+    padding:.55rem .7rem;background:rgba(13,11,10,.85);border:1px solid rgba(198,161,91,.42);
+    font-family:var(--serif);font-weight:700;font-size:1.45rem;color:var(--gold-soft);line-height:1;
+    box-shadow:0 12px 26px -12px rgba(0,0,0,.85)}
+  .spec-chip small{font-family:var(--sans);font-weight:400;font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;color:var(--bone-dim);margin-top:.32rem;white-space:nowrap}
+  .spec-chip.chip-l{top:19%;left:0}
+  .spec-chip.chip-r{top:45%;right:0}
+  .spec-chip.chip-b{bottom:9%;left:9%}
+  @media(max-width:520px){.spec-chip{font-size:1.2rem;min-width:60px;padding:.45rem .55rem}}
+
+  /* --- Pillar icons --- */
+  .pillar .p-ico{display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;
+    margin:0 auto 1.1rem;border:1px solid rgba(198,161,91,.5);border-radius:50%;color:var(--gold);
+    background:radial-gradient(circle at 50% 38%,rgba(198,161,91,.14),transparent 70%);transition:all .45s var(--ease)}
+  .pillar .p-ico svg{width:26px;height:26px}
+  .pillar:hover .p-ico{border-color:var(--gold);box-shadow:0 0 22px -6px rgba(198,161,91,.55);transform:translateY(-2px)}
+
+  /* --- Review faces --- */
+  .testimonial .t-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1.1rem}
+  .testimonial .t-face{width:54px;height:54px;border-radius:50%;object-fit:cover;object-position:50% 38%;flex:0 0 auto;
+    border:1px solid var(--gold);box-shadow:0 0 0 3px rgba(13,11,10,.9),0 0 18px -4px rgba(198,161,91,.5);filter:saturate(.95) contrast(1.03)}
+  .testimonial .t-name{font-family:var(--serif);font-weight:600;font-size:.92rem;letter-spacing:.05em;color:var(--gold-soft);display:block}
+  .testimonial .t-sub{font-family:var(--sans);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-top:.28rem;display:block}
+
   /* ---------- MISSION ---------- */
   .mission{
     background:
@@ -1260,10 +1296,14 @@
 
     <div class="product-wrap">
       <div class="product-visual reveal">
-        <div class="pedestal">
-          <img src="https://purebloodsupps.com/cdn/shop/files/BENEFITS_1.png" alt="PureTest black and red supplement tub surrounded by five benefit pillars" />
+        <div class="tub-stage">
+          <span class="tub-legacy">No Limit · Just Legacy</span>
+          <img class="tub-shot" src="pureblood-tub.png" alt="PureTest testosterone booster — matte-black tub with red lid, 180 capsules, 750mg per serving" />
+          <span class="spec-chip chip-l">180<small>Capsules</small></span>
+          <span class="spec-chip chip-r">750<small>mg / serving</small></span>
+          <span class="spec-chip chip-b">60<small>Day Guarantee</small></span>
         </div>
-        <span class="artifact-tag">180 Capsules · 750mg Per Serving · The Heirloom Formula</span>
+        <span class="artifact-tag">Third-Party Tested · NATA-Approved · The Heirloom Formula</span>
       </div>
       <div class="product-info reveal d1">
         <p>180 clinical-grade capsules. 750mg of no-BS, no-filler firepower per serving. Powerful herbs and minerals men have relied on for centuries — refined for real, measurable performance. This isn't a vitamin. It's a daily weapon. No limit. Just legacy.</p>
@@ -1333,11 +1373,26 @@
       <h2 class="section-title" id="pillars-title">Five Fronts. <span class="gold-text">One Formula.</span></h2>
     </div>
     <div class="pillar-grid">
-      <article class="pillar reveal"><div class="rn">01</div><h3>Testosterone Surge</h3><p>Unleashes natural T production. No BS.</p></article>
-      <article class="pillar reveal d1"><div class="rn">02</div><h3>Primal Drive</h3><p>Ignites libido. Boosts sexual dominance.</p></article>
-      <article class="pillar reveal d2"><div class="rn">03</div><h3>Relentless Energy</h3><p>Power through training, work, and life.</p></article>
-      <article class="pillar reveal d3"><div class="rn">04</div><h3>Mental Edge</h3><p>Sharp focus. Enhanced memory. Killer confidence.</p></article>
-      <article class="pillar reveal d4"><div class="rn">05</div><h3>Immune Armor</h3><p>Stay resilient. Strong inside and out.</p></article>
+      <article class="pillar reveal">
+        <span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 3 6-7"/><path d="M15 8h4v4"/></svg></span>
+        <h3>Testosterone Surge</h3><p>Unleashes natural T production. No BS.</p>
+      </article>
+      <article class="pillar reveal d1">
+        <span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.6 2.5 2.5 3.9 3.6 5.6A5 5 0 1 1 7 12c0-1.4.6-2.7 1.6-3.7.3 1 .9 1.7 1.7 2.2C11.4 8.7 11 6 12 3z"/></svg></span>
+        <h3>Primal Drive</h3><p>Ignites libido. Boosts sexual dominance.</p>
+      </article>
+      <article class="pillar reveal d2">
+        <span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h5l-1 9 8-12h-5l1-8z"/></svg></span>
+        <h3>Relentless Energy</h3><p>Power through training, work, and life.</p>
+      </article>
+      <article class="pillar reveal d3">
+        <span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.6.5.8 1.2.8 2v.4h6v-.4c0-.8.2-1.5.8-2A6 6 0 0 0 12 3z"/></svg></span>
+        <h3>Mental Edge</h3><p>Sharp focus. Enhanced memory. Killer confidence.</p>
+      </article>
+      <article class="pillar reveal d4">
+        <span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8-8 11-4.6-3-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Immune Armor</h3><p>Stay resilient. Strong inside and out.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -1451,19 +1506,28 @@
     </div>
     <div class="test-grid">
       <blockquote class="testimonial reveal">
+        <div class="t-head">
+          <img class="t-face" src="review-liam.jpg" alt="Liam Carter, PureTest customer" />
+          <span><span class="t-name">Liam Carter</span><span class="t-sub">PureTest Customer</span></span>
+        </div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>“I tried two other brands, one from Russia and the other from Pakistan. PureTest is far more potent and energizing than the others. I've tried almost every nootropic on the market, and this one was by far the most surprising. The energizing and focusing effects were strong and long-lasting.”</p>
-        <cite class="who">— Liam Carter</cite>
       </blockquote>
       <blockquote class="testimonial reveal d1">
+        <div class="t-head">
+          <img class="t-face" src="review-marcus.jpg" alt="Marcus James, PureTest customer" />
+          <span><span class="t-name">Marcus James</span><span class="t-sub">PureTest Customer</span></span>
+        </div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>“I've never felt more alive! This supplement has made a significant difference in my energy and testosterone levels. I wasn't expecting such an impact. Excellent service and an exceptional product. I noticed the effects more in the third week. Cheers.”</p>
-        <cite class="who">— Marcus James</cite>
       </blockquote>
       <blockquote class="testimonial reveal d2">
+        <div class="t-head">
+          <img class="t-face" src="review-jayden.jpg" alt="Jayden Wells, PureTest customer" />
+          <span><span class="t-name">Jayden Wells</span><span class="t-sub">PureTest Customer</span></span>
+        </div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>“This is one of the first companies I've tried for PureTest, and it truly works! Since using it, my nutrition has improved dramatically, and I find myself completing tasks more efficiently and feeling energized throughout the day.”</p>
-        <cite class="who">— Jayden Wells</cite>
       </blockquote>
     </div>
     <p class="illus reveal">Real reviews from PureTest customers. Individual results vary.</p>
