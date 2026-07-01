@@ -236,7 +236,7 @@
   }
   .nav-logo{display:flex;align-items:center;gap:.6rem}
   .nav-logo .nav-wm{height:28px;width:auto;filter:drop-shadow(0 0 1px var(--gold))}
-  .nav-logo .nav-emblem{height:40px;width:40px;object-fit:contain;background:#1C201F;border:1px solid var(--gold-deep);border-radius:50%;padding:3px;box-shadow:0 0 12px -3px rgba(198,161,91,.45)}
+  .nav-logo .nav-emblem{height:44px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
   .nav-logo .wm{
     font-family:var(--serif);font-weight:700;font-size:.95rem;
     letter-spacing:.22em;color:var(--bone);
@@ -290,9 +290,9 @@
   /* ---------- HERO ---------- */
   .hero{
     min-height:100vh;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
     text-align:center;
-    padding:3rem clamp(1.15rem,4vw,2.5rem) 4rem;
+    padding:6.6rem clamp(1.15rem,4vw,2.5rem) 1.2rem;
     position:relative;
     overflow:hidden;
     background:
@@ -307,16 +307,15 @@
   }
   .hero-inner{position:relative;z-index:2;max-width:900px}
   .crest{
-    height:clamp(146px,22vw,204px);width:auto;
-    margin:0 auto 1.8rem;
+    height:clamp(82px,11vh,128px);width:auto;
+    margin:0 auto 1rem;
     position:relative;display:inline-block;
     animation:crestGlow 5s ease-in-out infinite;
   }
   .crest::before{content:none}
   .crest img{
     height:100%;width:auto;display:block;
-    background:#1C201F;border:1px solid var(--gold-deep);border-radius:8px;padding:12px 20px;
-    box-shadow:0 0 0 5px rgba(13,11,10,.55), 0 24px 54px -22px rgba(0,0,0,.9), 0 0 36px -8px rgba(198,161,91,.32);
+    filter:drop-shadow(0 12px 26px rgba(0,0,0,.55)) drop-shadow(0 0 22px rgba(198,161,91,.12));
     position:relative;z-index:2;
   }
   @keyframes crestGlow{
@@ -326,15 +325,15 @@
   .hero-eyebrow{
     font-family:var(--serif);font-weight:600;
     font-size:clamp(.62rem,1.6vw,.8rem);
-    letter-spacing:.42em;text-transform:uppercase;color:var(--gold);
-    margin-bottom:1.5rem;
+    letter-spacing:.36em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:.8rem;
   }
   .hero h1{
-    font-size:clamp(2.4rem,7.2vw,5.4rem);
+    font-size:clamp(2rem,5.7vw,4.3rem);
     text-transform:uppercase;
-    line-height:1.02;
-    letter-spacing:.03em;
-    margin-bottom:.4rem;
+    line-height:1.0;
+    letter-spacing:.02em;
+    margin-bottom:.3rem;
     color:var(--bone);
     text-shadow:0 4px 40px rgba(0,0,0,.7);
   }
@@ -345,18 +344,18 @@
   .hero-secondary{
     font-family:var(--editorial);
     font-style:italic;
-    font-size:clamp(1.05rem,2.6vw,1.6rem);
+    font-size:clamp(1rem,2.2vw,1.35rem);
     color:var(--gold-soft);
     letter-spacing:.06em;
-    margin:1rem auto 1.7rem;
+    margin:.5rem auto .85rem;
   }
   .hero-sub{
-    font-size:clamp(.98rem,1.8vw,1.12rem);
+    font-size:clamp(.9rem,1.5vw,1rem);
     color:var(--bone-dim);
-    max-width:640px;margin:0 auto 2.4rem;
-    font-weight:300;line-height:1.75;
+    max-width:600px;margin:0 auto 1.3rem;
+    font-weight:300;line-height:1.6;
   }
-  .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.6rem}
+  .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem}
   .hero-trust{
     display:flex;gap:.6rem 1.9rem;justify-content:center;flex-wrap:wrap;
     font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
@@ -365,11 +364,11 @@
   .hero-trust span{display:inline-flex;align-items:center;gap:.5rem}
   .hero-trust span::before{content:"✦";color:var(--gold);font-size:.7rem}
   .scroll-hint{
-    position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:3;
-    font-family:var(--serif);font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;
-    color:var(--gold-deep);display:flex;flex-direction:column;align-items:center;gap:.5rem;
+    position:absolute;bottom:.7rem;left:50%;transform:translateX(-50%);z-index:3;
+    font-family:var(--serif);font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold-deep);display:flex;flex-direction:column;align-items:center;gap:.35rem;
   }
-  .scroll-hint .bar{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:scrollBar 2.2s ease-in-out infinite}
+  .scroll-hint .bar{width:1px;height:20px;background:linear-gradient(var(--gold),transparent);animation:scrollBar 2.2s ease-in-out infinite}
   @keyframes scrollBar{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
 
   /* ---------- Scroll reveal ---------- */
@@ -442,15 +441,16 @@
     font-size:clamp(1.1rem,2.6vw,1.7rem);letter-spacing:.22em;text-transform:uppercase;
     color:var(--gold);margin:4rem 0 2.6rem;
   }
-  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem}
+  .card-grid{display:grid;grid-template-columns:1fr;gap:1rem;max-width:820px;margin:0 auto}
   .threat-card{
     background:linear-gradient(160deg,rgba(26,22,19,.9),rgba(16,14,12,.9));
     border:1px solid rgba(198,161,91,.14);
-    padding:2rem 1.8rem;
+    padding:1.5rem 1.9rem;
     position:relative;
+    display:grid;grid-template-columns:auto 1fr;column-gap:1.6rem;row-gap:.28rem;align-items:center;
     transition:opacity .6s var(--ease), transform .6s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease);
     overflow:hidden;
-    opacity:0;transform:translateY(30px);
+    opacity:0;transform:translateY(26px);
   }
   .threat-card.show{opacity:1;transform:none}
   .threat-card::before{
@@ -464,16 +464,20 @@
   }
   .threat-card:hover::before{transform:scaleX(1)}
   .threat-num{
-    font-family:var(--serif);font-weight:700;font-size:1rem;color:var(--gold-deep);
-    letter-spacing:.1em;margin-bottom:1rem;display:flex;align-items:center;gap:.7rem;
+    font-family:var(--serif);font-weight:700;font-size:.95rem;color:var(--gold-deep);
+    letter-spacing:.1em;display:flex;flex-direction:column;align-items:center;gap:.5rem;
+    grid-column:1;grid-row:1 / span 2;align-self:center;
   }
-  .threat-num .ic{display:inline-flex;align-items:center;color:var(--gold)}
-  .threat-num .ic svg{width:27px;height:27px}
+  .threat-num .ic{display:inline-flex;align-items:center;justify-content:center;color:var(--gold);
+    width:52px;height:52px;border:1px solid rgba(198,161,91,.4);border-radius:50%;
+    background:radial-gradient(circle at 50% 38%,rgba(198,161,91,.1),transparent 70%)}
+  .threat-num .ic svg{width:26px;height:26px}
   .threat-card h3{
-    font-family:var(--serif);font-weight:600;font-size:1.02rem;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--bone);margin-bottom:.8rem;line-height:1.25;
+    font-family:var(--serif);font-weight:600;font-size:1.08rem;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--bone);line-height:1.2;
+    grid-column:2;grid-row:1;
   }
-  .threat-card p{font-size:.92rem;color:var(--grey);line-height:1.6}
+  .threat-card p{font-size:.92rem;color:var(--bone-dim);line-height:1.55;grid-column:2;grid-row:2}
   .closer{
     max-width:760px;margin:3.4rem auto 0;text-align:center;
     font-family:var(--editorial);font-size:clamp(1.05rem,2.2vw,1.35rem);
@@ -499,9 +503,10 @@
   }
   .cost-list li:hover{background:rgba(123,17,19,.1)}
   .cost-list li .x{
-    color:var(--oxblood-bright);font-family:var(--serif);font-weight:700;font-size:1.1rem;flex:0 0 auto;
-    width:26px;height:26px;display:grid;place-items:center;border:1px solid var(--oxblood);border-radius:50%;
+    color:var(--oxblood-bright);flex:0 0 auto;
+    width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--oxblood);border-radius:50%;
   }
+  .cost-list li .x svg{width:12px;height:12px;display:block}
   .cost-note{
     max-width:720px;margin:2.8rem auto 0;text-align:center;
     font-family:var(--editorial);font-size:clamp(1.1rem,2.3vw,1.4rem);
@@ -678,7 +683,28 @@
   }
 
   /* ---------- FIVE PILLARS ---------- */
-  .pillars{background:linear-gradient(180deg,var(--char-850),var(--char-900))}
+  /* Product page: bolder + brighter, with Five Fronts merged in compact below */
+  .product{padding-bottom:2.4rem}
+  .product-wrap{align-items:start}
+  .product-visual{position:sticky;top:100px}
+  @media(max-width:860px){.product-visual{position:static}}
+  .prod-desc{color:var(--bone)!important;font-weight:400!important;margin-top:1.7rem;font-size:1rem;line-height:1.7}
+  .prod-bullets{margin-top:1.1rem;margin-bottom:0}
+  .prod-bullets li{color:var(--bone);font-size:1rem}
+  .buy-box{border-color:rgba(198,161,91,.5)!important;box-shadow:inset 0 0 36px rgba(0,0,0,.3),0 26px 64px -30px rgba(198,161,91,.28)!important}
+  .buy-box .b-now{font-size:1.42rem}
+  .buy-box .bundle-kicker{color:var(--gold-soft)}
+  .pillars{background:transparent;padding-top:.4rem;padding-bottom:clamp(3.5rem,7vw,6rem)}
+  .pillars .sec-head{margin-bottom:2rem}
+  .pillars .section-title{font-size:clamp(1.3rem,2.8vw,1.95rem)}
+  .pillar{padding:1.5rem 1rem}
+  .pillar .p-ico{width:46px;height:46px;margin-bottom:.7rem}
+  .pillar .p-ico svg{width:22px;height:22px}
+  .pillar h3{font-size:.84rem;margin-bottom:.5rem}
+  .pillar p{font-size:.78rem;line-height:1.45}
+  .pillar-grid{grid-template-columns:repeat(5,1fr);gap:.8rem;max-width:1060px;margin:0 auto}
+  @media(max-width:820px){.pillars .pillar-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.pillars .pillar-grid{grid-template-columns:1fr}}
   .pillar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.3rem}
   .pillar{
     text-align:center;padding:2.3rem 1.4rem;
@@ -794,7 +820,7 @@
   .creed::before{
     content:"";position:absolute;inset:8px;border:1px solid rgba(198,161,91,.16);pointer-events:none;
   }
-  .creed-crest{height:152px;width:auto;margin:0 auto 2rem;display:block;background:#1C201F;border:1px solid var(--gold-deep);border-radius:6px;padding:12px 20px;box-shadow:0 0 0 5px rgba(13,11,10,.5),0 22px 52px -22px rgba(0,0,0,.9),0 0 32px -8px rgba(198,161,91,.3)}
+  .creed-crest{height:150px;width:auto;margin:0 auto 2rem;display:block;filter:drop-shadow(0 14px 30px rgba(0,0,0,.55)) drop-shadow(0 0 24px rgba(198,161,91,.12))}
   .code-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin-top:2.4rem}
   .code-tags span{font-family:var(--head);font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(198,161,91,.4);padding:.6em 1.15em;border-radius:2px;transition:all .3s var(--ease)}
   .code-tags span:hover{border-color:var(--gold);background:rgba(198,161,91,.08)}
@@ -988,7 +1014,7 @@
   }
   .final-cta::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 200px 60px rgba(0,0,0,.7);pointer-events:none}
   .final-cta .container{position:relative;z-index:2}
-  .final-cta .crest-sm{height:104px;width:auto;margin:0 auto 1.8rem;display:block;background:#1C201F;border:1px solid var(--gold-deep);border-radius:6px;padding:8px 16px;box-shadow:0 0 0 4px rgba(13,11,10,.5),0 0 26px -6px rgba(198,161,91,.36)}
+  .final-cta .crest-sm{height:112px;width:auto;margin:0 auto 1.6rem;display:block;filter:drop-shadow(0 12px 26px rgba(0,0,0,.55)) drop-shadow(0 0 22px rgba(198,161,91,.14))}
   .final-cta h2{
     font-size:clamp(2rem,6vw,4.2rem);text-transform:uppercase;color:var(--bone);
     letter-spacing:.03em;margin-bottom:1.2rem;line-height:1.05;
@@ -1138,14 +1164,14 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="kicker">An Inconvenient Truth</span>
-      <h2 class="section-title" id="emergency-title">They Turned Men Soft — <span class="blood-text">On Purpose.</span></h2>
+      <h2 class="section-title" id="emergency-title">They Turned Men Soft —<br><span class="blood-text">On Purpose.</span></h2>
     </div>
     <div class="ornament reveal"><span class="line"></span><span class="diamond"></span><span class="line rev"></span></div>
 
     <p class="manifesto-body drop-cap reveal" style="margin-top:2.6rem;">Testosterone in men has collapsed. Studies suggest the average man today carries a fraction of the testosterone his grandfather had at the same age. That's not bad luck — it's the by-product of a world built to keep you docile, distracted, and weak. Soft food. Soft lives. Soft men. We think that's a crime.</p>
 
     <blockquote class="stone-quote reveal">
-      <p><span class="mk">“</span>The modern world is manufacturing weak men. Comfortable. Compliant. Neutered. Not anymore.<span class="mk">”</span></p>
+      <p><span class="mk">“</span>The modern world is manufacturing weak men. Comfortable. Compliant. Neutered. By design.<span class="mk">”</span></p>
     </blockquote>
 
     <!-- Testosterone decline chart -->
@@ -1256,14 +1282,14 @@
       <h2 class="section-title" id="cost-title">This Is What Low Testosterone Is <span class="blood-text">Costing You.</span></h2>
     </div>
     <ul class="cost-list reveal">
-      <li><span class="x">✕</span>No drive when the alarm goes off</li>
-      <li><span class="x">✕</span>Brain fog and zero focus</li>
-      <li><span class="x">✕</span>A gut that won't budge</li>
-      <li><span class="x">✕</span>Confidence in the gutter</li>
-      <li><span class="x">✕</span>No spark in the bedroom</li>
-      <li><span class="x">✕</span>Tired by 2pm, every day</li>
-      <li><span class="x">✕</span>Passive in the boardroom and at home</li>
-      <li><span class="x">✕</span>Watching life instead of leading it</li>
+      <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span>No drive when the alarm goes off</li>
+      <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span>Brain fog and zero focus</li>
+      <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span>A gut that won't budge</li>
+      <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span>Confidence in the gutter</li>
+      <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span>No spark in the bedroom</li>
+      <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span>Tired by 2pm, every day</li>
+      <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span>Passive in the boardroom and at home</li>
+      <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span>Watching life instead of leading it</li>
     </ul>
     <p class="cost-note reveal">You've been told this is “just getting older.” <b>It isn't. It's low testosterone — and it's reversible.</b></p>
   </div>
@@ -1274,7 +1300,7 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="kicker">When Your T Is Where Nature Intended</span>
-      <h2 class="section-title" id="payoff-title">High Testosterone <span class="gold-text">Changes Everything.</span></h2>
+      <h2 class="section-title" id="payoff-title">High Testosterone<br><span class="gold-text">Changes Everything.</span></h2>
       <p class="lead">This is bigger than a supplement. Get your testosterone back to where biology intended and every single domain of your life levels up.</p>
     </div>
     <div class="payoff-grid">
@@ -1287,7 +1313,7 @@
       <article class="payoff-card reveal d2"><div class="idx">VII.</div><h3>Aggression On Demand</h3><p>Controlled, channeled intensity. The killer instinct that gets things done.</p></article>
       <article class="payoff-card reveal d3"><div class="idx">VIII.</div><h3>Vitality &amp; Energy</h3><p>The deep, all-day fuel of a man operating in his prime.</p></article>
     </div>
-    <p class="payoff-line reveal">This is your birthright. <span>PureTest just helps you take it back.</span></p>
+    <p class="payoff-line reveal">This is your birthright. <span>PureTest helps you take it back.</span></p>
   </div>
 </section>
 
@@ -1296,7 +1322,7 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="kicker">The Weapon</span>
-      <h2 class="section-title" id="product-title">PureTest — The Ultimate <span class="gold-text">Testosterone Weapon</span> For Modern Men.</h2>
+      <h2 class="section-title" id="product-title">PureTest — The Ultimate<br><span class="gold-text">Testosterone Weapon</span><br>For Modern Men.</h2>
     </div>
     <div class="ornament reveal" style="margin-bottom:3rem;"><span class="line"></span><span class="diamond"></span><span class="line rev"></span></div>
 
@@ -1308,14 +1334,6 @@
         <span class="artifact-tag">180 Capsules · 750mg Per Serving · The Heirloom Formula</span>
       </div>
       <div class="product-info reveal d1">
-        <p>180 clinical-grade capsules. 750mg of no-BS, no-filler firepower per serving. Powerful herbs and minerals men have relied on for centuries — refined for real, measurable performance. This isn't a vitamin. It's a daily weapon. No limit. Just legacy.</p>
-        <ul class="prod-bullets">
-          <li><span class="chk">✅</span>Testosterone &amp; Sexual Health</li>
-          <li><span class="chk">✅</span>Clinically-Backed Ingredients</li>
-          <li><span class="chk">✅</span>Sustained Energy &amp; Focus</li>
-          <li><span class="chk">✅</span>Immune &amp; Inflammation Support</li>
-          <li><span class="chk">✅</span>Mental Clarity &amp; Stress Control</li>
-        </ul>
         <div class="buy-box">
           <span class="kicker bundle-kicker">Bundle &amp; Save</span>
           <div class="bundles" role="radiogroup" aria-label="Choose your PureTest bundle">
@@ -1363,6 +1381,14 @@
           <a href="#shop" class="btn btn-blood" id="bundleCta">Add 3 Tubs — $159.98</a>
           <p class="micro-trust"><span>Third-Party Tested · NATA-Approved · 60-Day Money-Back Guarantee</span><br />Free High-T Blueprint with every order.</p>
         </div>
+        <p class="prod-desc">180 clinical-grade capsules. 750mg of no-BS, no-filler firepower per serving. Powerful herbs and minerals men have relied on for centuries — refined for real, measurable performance. This isn't a vitamin. It's a daily weapon. No limit. Just legacy.</p>
+        <ul class="prod-bullets">
+          <li><span class="chk">✅</span>Testosterone &amp; Sexual Health</li>
+          <li><span class="chk">✅</span>Clinically-Backed Ingredients</li>
+          <li><span class="chk">✅</span>Sustained Energy &amp; Focus</li>
+          <li><span class="chk">✅</span>Immune &amp; Inflammation Support</li>
+          <li><span class="chk">✅</span>Mental Clarity &amp; Stress Control</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1535,11 +1561,11 @@
 <section class="mission" id="mission" aria-labelledby="mission-title">
   <div class="container">
     <div class="sec-head reveal">
-      <h2 class="section-title" id="mission-title">Built For The Men The <span class="blood-text">World Gave Up On.</span></h2>
+      <h2 class="section-title" id="mission-title">Built For The Men<br><span class="blood-text">The World Gave Up On.</span></h2>
     </div>
     <div class="ornament reveal" style="margin-bottom:2.6rem;"><span class="line"></span><span class="diamond"></span><span class="line rev"></span></div>
     <p class="mission-body reveal">Pure Blood wasn't built to sell you wellness — it was built to wage war on a modern world engineered to strip men of their power. Processed food. Synthetic hormones. Low-T lifestyles. A culture that quietly rewards weakness. We exist to hand men the tools to fight all of it and win. No fluff. No filler. No apologies. Just raw, clinical-grade formulas for men who refuse to settle for soft.</p>
-    <p class="mission-quote reveal">“This isn't wellness — it's war. You either level up, <span>or get left behind.</span>”</p>
+    <p class="mission-quote reveal">“This isn't wellness — it's war.<br>You either level up, <span>or get left behind.</span>”</p>
   </div>
 </section>
 
