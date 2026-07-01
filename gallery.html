@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pure Blood — 3 Design Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600;700&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#0A0A0A; --panel:#141414; --panel2:#1b1b1b; --line:#2a2a2a;
+    --red:#C10016; --hot:#E11021; --gold:#C6A15B; --bone:#F4F1EA; --mut:#9a9a9a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(1100px 600px at 50% -10%, rgba(193,0,22,.20), transparent 60%),
+      var(--black);
+    color:var(--bone); font-family:'Inter',sans-serif; line-height:1.6;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  a{color:inherit;text-decoration:none}
+
+  /* HEADER */
+  header{padding:34px 0 8px;text-align:center}
+  header img{height:44px;background:var(--bone);padding:8px 14px;border-radius:4px}
+  .eyebrow{margin-top:26px;color:var(--hot);font-weight:700;letter-spacing:.32em;
+    text-transform:uppercase;font-size:.72rem}
+  h1{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:1px;
+    font-size:clamp(2.6rem,7vw,5.4rem);margin:.35em 0 .2em}
+  h1 .r{color:var(--hot)}
+  .lede{max-width:720px;margin:0 auto;color:#cfcabf;font-size:clamp(1rem,2.4vw,1.18rem)}
+  .meta{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:999px;
+    padding:8px 16px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:#cfcabf}
+  .chip b{color:var(--hot)}
+
+  /* GRID */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:56px 0 30px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+  .card{background:linear-gradient(180deg,var(--panel),#0d0d0d);border:1px solid var(--line);
+    border-radius:14px;overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;position:relative}
+  .card:hover{transform:translateY(-6px);border-color:var(--hot);
+    box-shadow:0 24px 60px rgba(193,0,22,.28)}
+  .swatch{height:150px;position:relative;display:flex;align-items:flex-end;padding:16px}
+  .num{position:absolute;top:10px;right:16px;font-family:'Anton',sans-serif;font-size:3.4rem;
+    color:rgba(255,255,255,.08);line-height:1}
+  .tag{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+    padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.16)}
+  /* concept swatches */
+  .s1{background:
+      repeating-linear-gradient(45deg,#000 0 14px,#C10016 14px 28px) top/100% 12px no-repeat,
+      radial-gradient(400px 200px at 30% 120%,rgba(225,16,33,.5),transparent),#0b0b0b}
+  .s1 .tag{font-family:'Anton',sans-serif;letter-spacing:.06em}
+  .s2{background:
+      radial-gradient(300px 200px at 50% 120%,rgba(123,17,19,.65),transparent),
+      linear-gradient(120deg,#12100e,#1a1512);border-bottom:1px solid var(--gold)}
+  .s2 .tag{font-family:'Cinzel',serif;color:var(--gold);border-color:rgba(198,161,91,.5);letter-spacing:.16em}
+  .s3{background:
+      linear-gradient(0deg,rgba(225,16,33,.14),transparent),
+      radial-gradient(circle at 20% 20%,rgba(225,16,33,.9) 0 2px,transparent 2px) 0 0/26px 26px,
+      #0b0e12}
+  .s3 .tag{font-family:'Space Grotesk',sans-serif}
+  .card__body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .card h2{font-size:1.4rem;letter-spacing:.4px;margin-bottom:4px}
+  .card .vibe{color:var(--hot);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:700;margin-bottom:12px}
+  .s2wrap .vibe{color:var(--gold)}
+  .card p{color:#bdb8ae;font-size:.94rem;margin-bottom:16px}
+  .card ul{list-style:none;margin:0 0 22px;display:flex;flex-wrap:wrap;gap:6px}
+  .card li{font-size:.72rem;color:#cfcabf;border:1px solid var(--line);border-radius:6px;padding:5px 9px}
+  .btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px 18px;border-radius:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    font-size:.82rem;background:var(--hot);color:#fff;transition:background .2s ease,transform .15s ease}
+  .btn:hover{background:#fff;color:#000}
+  .btn.gold{background:var(--gold);color:#1a1512}.btn.gold:hover{background:#fff}
+  .card .arrow{transition:transform .2s ease}.card:hover .arrow{transform:translateX(4px)}
+
+  /* shared note */
+  .shared{margin:30px 0 90px;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:30px 28px}
+  .shared h3{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.5px;
+    font-size:1.5rem;margin-bottom:14px}
+  .shared h3 .r{color:var(--hot)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:760px){.cols{grid-template-columns:1fr}}
+  .shared p{color:#bdb8ae;font-size:.95rem;margin-bottom:10px}
+  .shared strong{color:var(--bone)}
+  footer{border-top:1px solid var(--line);padding:26px 0 60px;text-align:center;color:var(--mut);
+    font-size:.82rem}
+  footer b{color:var(--bone);letter-spacing:1px}
+  .disc{max-width:760px;margin:14px auto 0;font-size:.72rem;color:#6f6f6f;line-height:1.5}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <img src="https://purebloodsupps.com/cdn/shop/files/pure_blood_logos_7.png" alt="Pure Blood Supps logo" />
+    <div class="eyebrow">Three Design Concepts · One Bloodline</div>
+    <h1>WAGE WAR ON <span class="r">WEAKNESS.</span></h1>
+    <p class="lede">Three completely different directions for the Pure Blood site — same savage message,
+      same real product, three radically different worlds. Every concept carries the full new copy deck.
+      Pick a lane, or steal the best from each.</p>
+    <div class="meta">
+      <span class="chip"><b>Product:</b>&nbsp;PureTest — $79.99</span>
+      <span class="chip"><b>Palette:</b>&nbsp;Black · Blood Red · Gold · Bone</span>
+      <span class="chip"><b>Built:</b>&nbsp;Responsive · Self-contained</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <!-- CONCEPT 1 -->
+    <article class="card">
+      <div class="swatch s1"><span class="num">01</span><span class="tag">Blood Forge</span></div>
+      <div class="card__body">
+        <h2>The Blood Forge</h2>
+        <div class="vibe">Raw · Brutalist · Aggressive</div>
+        <p>The loudest of the three. Fight-club manifesto energy — massive condensed type pushing off the
+          edges, hazard stripes, blood-red glow, film grain, a scrolling war-cry ticker. Built to hit like a punch.</p>
+        <ul><li>Anton display</li><li>Hazard motifs</li><li>Ghost numbers</li><li>Lion watermark</li></ul>
+        <a class="btn" href="concept-1-blood-forge.html">Enter the Forge <span class="arrow">→</span></a>
+      </div>
+    </article>
+
+    <!-- CONCEPT 2 -->
+    <article class="card s2wrap">
+      <div class="swatch s2"><span class="num">02</span><span class="tag">The Bloodline</span></div>
+      <div class="card__body">
+        <h2>The Bloodline</h2>
+        <div class="vibe">Cinematic · Heritage · Premium</div>
+        <p>The luxury play. A warrior-dynasty feel — engraved Roman serif, antique gold on oxblood, the lion
+          as a heraldic crest, stone-tablet quotes and an engraved creed. Expensive, timeless, aspirational.</p>
+        <ul><li>Cinzel serif</li><li>Gold + oxblood</li><li>Lion crest</li><li>Engraved creed</li></ul>
+        <a class="btn gold" href="index.html">Claim the Legacy <span class="arrow">→</span></a>
+      </div>
+    </article>
+
+    <!-- CONCEPT 3 -->
+    <article class="card">
+      <div class="swatch s3"><span class="num">03</span><span class="tag">The Protocol</span></div>
+      <div class="card__body">
+        <h2>The Protocol</h2>
+        <div class="vibe">Clinical · Data-Driven · Tech</div>
+        <p>The credibility play. Whoop-for-testosterone — a HUD/dashboard aesthetic with an animated
+          "testosterone decline" chart, count-up stats, mono data tags and a spec-sheet product block. Razor clean.</p>
+        <ul><li>Space Grotesk</li><li>Live T chart</li><li>Stat counters</li><li>Bento grid</li></ul>
+        <a class="btn" href="concept-3-the-protocol.html">Run the Protocol <span class="arrow">→</span></a>
+      </div>
+    </article>
+
+  </div>
+
+  <section class="shared">
+    <h3>What every concept <span class="r">shares</span></h3>
+    <div class="cols">
+      <div>
+        <p><strong>The full new copy deck (18 sections):</strong> the manifesto on why modern life makes
+          men soft (seed oils, life indoors, sitting, microplastics, cortisol, weak culture), the cost of
+          low-T, the payoff of high-T, PureTest as "the weapon," the 5 pillars, ingredients, the daily
+          protocol, the comparison, the PureBlood Code creed, results, the mission, the 60-day guarantee,
+          the free High-T Blueprint, FAQ, and hard closing CTAs.</p>
+        <p><strong>Real brand assets:</strong> the Pure Blood wordmark, the lion mascot, the PureTest tub,
+          benefits, comparison, nutrition, guarantee and certification graphics — all live from the store.</p>
+      </div>
+      <div>
+        <p><strong>The lifestyle framing:</strong> every page argues this is a movement, not a bottle —
+          "level up or get left behind," "save men, and through that, save humanity."</p>
+        <p><strong>The build:</strong> each concept is one self-contained HTML file — responsive, sticky
+          nav, announcement ticker, smooth scrolling, scroll-reveal animations, working FAQ accordion,
+          email capture, payment icons and legal disclaimer. Double-click to open, or drop straight into
+          a Shopify section/theme.</p>
+        <p style="color:#8a8a8a;font-size:.82rem">Tip: open all three side by side and decide which world
+          fits your friend's ambition — or mix them (e.g. Forge energy + Protocol proof).</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>PURE BLOOD</b> — No limit. Just legacy.
+    <p class="disc">Design concepts prepared for review. Copy is production-ready but should be fact-checked
+      before publishing. *These statements have not been evaluated by the FDA or TGA. This product is not
+      intended to diagnose, treat, cure, or prevent any disease. Testimonials are illustrative; individual
+      results vary.</p>
+  </div>
+</footer>
+</body>
+</html>

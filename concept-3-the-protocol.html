@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PureTest — The Testosterone Protocol | Pure Blood Supps</title>
+<meta name="description" content="PureTest by Pure Blood Supps — a data-driven testosterone protocol for men who refuse to go soft. Clinically-backed. Third-party tested. NATA-approved. 60-day money-back guarantee." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#08090B;
+    --panel:#0E1116;
+    --card:#151A21;
+    --card-2:#11151B;
+    --border:#232A33;
+    --border-2:#2E3742;
+    --red:#E11021;
+    --red-soft:#ff2f3f;
+    --red-dim:rgba(225,16,33,.14);
+    --text:#E7ECF2;
+    --steel:#8A95A3;
+    --steel-2:#5E6875;
+    --white:#ffffff;
+    --sans:'Space Grotesk',system-ui,sans-serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --maxw:1240px;
+    --r:12px;
+    --r-lg:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--black);
+    color:var(--text);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 20% -10%, rgba(225,16,33,.10), transparent 45%),
+      radial-gradient(circle at 90% 0%, rgba(225,16,33,.05), transparent 40%);
+    background-attachment:fixed;
+  }
+  /* dotted grid overlay */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background-image:radial-gradient(rgba(138,149,163,.08) 1px, transparent 1px);
+    background-size:34px 34px;
+    mask-image:linear-gradient(180deg, rgba(0,0,0,.7), rgba(0,0,0,.15) 40%, rgba(0,0,0,.15) 60%, rgba(0,0,0,.7));
+    opacity:.6;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  section{position:relative;z-index:1}
+  ::selection{background:var(--red);color:#fff}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono)}
+  .kicker{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--red-soft);
+    display:inline-flex;
+    align-items:center;
+    gap:.6em;
+  }
+  .kicker::before{
+    content:"";
+    width:8px;height:8px;border-radius:2px;
+    background:var(--red);
+    box-shadow:0 0 12px 2px rgba(225,16,33,.7);
+  }
+  .tag{
+    font-family:var(--mono);
+    font-size:.68rem;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--steel);
+    border:1px solid var(--border);
+    padding:5px 10px;
+    border-radius:6px;
+    display:inline-block;
+    background:rgba(255,255,255,.01);
+  }
+  h1,h2,h3,h4{font-family:var(--sans);font-weight:700;line-height:1.02;letter-spacing:-.02em}
+  h2.section-title{
+    font-size:clamp(2rem,5.2vw,3.4rem);
+    text-transform:uppercase;
+    margin:.4em 0 .3em;
+  }
+  .lead{color:var(--steel);font-size:1.05rem;max-width:62ch}
+  .red{color:var(--red-soft)}
+
+  /* glowing divider */
+  .glow-line{
+    height:1px;width:100%;
+    background:linear-gradient(90deg,transparent,var(--red),transparent);
+    opacity:.55;
+    box-shadow:0 0 14px 1px rgba(225,16,33,.4);
+  }
+
+  /* Buttons */
+  .btn{
+    font-family:var(--mono);
+    font-size:.82rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:.6em;
+    padding:15px 26px;
+    border-radius:10px;
+    border:1px solid var(--red);
+    background:var(--red);
+    color:#fff;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .25s ease, background .2s ease;
+    box-shadow:0 0 0 rgba(225,16,33,0);
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px -6px rgba(225,16,33,.7)}
+  .btn:active{transform:translateY(0)}
+  .btn.ghost{
+    background:transparent;
+    color:var(--text);
+    border:1px solid var(--border-2);
+  }
+  .btn.ghost:hover{border-color:var(--red);color:var(--red-soft);box-shadow:0 8px 24px -10px rgba(225,16,33,.4)}
+  .btn.sm{padding:11px 18px;font-size:.74rem}
+
+  /* Scroll progress bar */
+  #progress{
+    position:fixed;top:0;left:0;height:3px;width:0%;
+    background:linear-gradient(90deg,var(--red),var(--red-soft));
+    z-index:200;
+    box-shadow:0 0 12px 1px rgba(225,16,33,.8);
+    transition:width .08s linear;
+  }
+
+  /* Ticker */
+  .ticker{
+    background:var(--red);
+    color:#fff;
+    overflow:hidden;
+    white-space:nowrap;
+    position:relative;
+    z-index:150;
+    border-bottom:1px solid rgba(0,0,0,.3);
+  }
+  .ticker__track{
+    display:inline-block;
+    padding:9px 0;
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.22em;
+    animation:scroll-ticker 28s linear infinite;
+  }
+  .ticker__track span{padding:0 1.4rem}
+  @keyframes scroll-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* Nav */
+  header.nav{
+    position:sticky;top:0;
+    z-index:140;
+    background:rgba(8,9,11,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav__inner{
+    display:flex;align-items:center;justify-content:space-between;
+    height:66px;
+  }
+  .nav__logo{display:flex;align-items:center;gap:10px}
+  .nav__logo img{height:30px;background:#fff;border-radius:6px;padding:4px 8px}
+  .nav__links{display:flex;gap:26px;align-items:center}
+  .nav__links a{
+    font-family:var(--mono);
+    font-size:.74rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--steel);
+    transition:color .18s ease;
+    position:relative;
+  }
+  .nav__links a:hover{color:var(--text)}
+  .nav__links a::after{
+    content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;
+    background:var(--red);transition:width .2s ease;
+  }
+  .nav__links a:hover::after{width:100%}
+  .nav__cta{display:flex;align-items:center;gap:14px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--text);display:block;transition:.2s}
+  #mobile-menu{display:none}
+
+  /* HERO */
+  .hero{padding:64px 0 40px;position:relative;overflow:hidden}
+  .hero__grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero__eyebrow{margin-bottom:20px}
+  .hero h1{
+    font-size:clamp(2.6rem,7vw,5rem);
+    text-transform:uppercase;
+    line-height:.98;
+    margin-bottom:8px;
+  }
+  .hero h1 .accent{
+    display:block;
+    color:var(--red-soft);
+    text-shadow:0 0 30px rgba(225,16,33,.5);
+  }
+  .hero__sub{margin:22px 0 30px;color:var(--steel);font-size:1.1rem;max-width:56ch}
+  .hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .hero__trust{
+    display:flex;gap:10px;flex-wrap:wrap;
+  }
+  .hero__trust .chip{
+    font-family:var(--mono);
+    font-size:.66rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--steel);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:6px 12px;
+    background:var(--card-2);
+  }
+  .hero__trust .chip b{color:var(--red-soft);font-weight:700}
+
+  .hero__visual{position:relative}
+  .hero__panel{
+    border:1px solid var(--border);
+    border-radius:var(--r-lg);
+    background:linear-gradient(160deg,var(--card),var(--card-2));
+    padding:20px;
+    position:relative;
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.9);
+  }
+  .hero__panel::before{
+    content:"[ SYS.HERO / PURETEST.v1 ]";
+    position:absolute;top:-11px;left:16px;
+    font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;
+    color:var(--steel);background:var(--card);padding:2px 10px;border:1px solid var(--border);border-radius:20px;
+  }
+  .hero__panel img{border-radius:10px}
+  .hero__lion{
+    position:absolute;top:-38px;right:-20px;width:120px;
+    filter:drop-shadow(0 0 22px rgba(225,16,33,.35));
+    opacity:.95;
+    z-index:2;
+  }
+  .hero__stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;
+  }
+  .statlet{
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--card-2);
+    padding:12px;
+    text-align:left;
+  }
+  .statlet .num{font-family:var(--sans);font-weight:700;font-size:1.5rem;color:var(--text)}
+  .statlet .lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-top:2px}
+
+  /* Generic section spacing */
+  .sec{padding:82px 0}
+  .sec-head{margin-bottom:44px;max-width:80ch}
+
+  /* CHART / credibility */
+  .chart-wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  }
+  .chart-card{
+    border:1px solid var(--border);
+    border-radius:var(--r-lg);
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    padding:24px;
+    position:relative;
+  }
+  .chart-card h4{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--steel);margin-bottom:4px;font-weight:500;
+  }
+  .chart-card .chart-title{font-family:var(--sans);font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:16px}
+  .chart-svg{width:100%;height:auto;display:block}
+  .chart-legend{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+  .chart-legend .item{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--steel);display:flex;align-items:center;gap:6px}
+  .chart-legend .dot{width:10px;height:3px;border-radius:2px;background:var(--red)}
+
+  /* stat row big count-up */
+  .bigstats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:0}
+  .bigstat{
+    border:1px solid var(--border);border-radius:var(--r);
+    background:var(--card-2);padding:22px 18px;position:relative;overflow:hidden;
+  }
+  .bigstat::after{
+    content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:var(--red);opacity:.7;
+  }
+  .bigstat .num{font-family:var(--sans);font-weight:700;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1;color:var(--text)}
+  .bigstat .suf{color:var(--red-soft)}
+  .bigstat .lbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-top:10px}
+
+  /* WAR grid cards */
+  .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cell{
+    border:1px solid var(--border);
+    border-radius:var(--r);
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    padding:24px;
+    position:relative;
+    transition:border-color .2s ease, transform .2s ease, box-shadow .25s ease;
+  }
+  .cell:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 20px 40px -24px rgba(225,16,33,.5)}
+  .cell .idx{
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;color:var(--red-soft);
+    display:block;margin-bottom:14px;
+  }
+  .cell .ic{width:34px;height:34px;margin-bottom:14px;color:var(--red-soft)}
+  .cell h3{font-size:1.02rem;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:8px;color:var(--text)}
+  .cell p{color:var(--steel);font-size:.92rem}
+
+  /* Pull quote */
+  .pullquote{
+    border-left:3px solid var(--red);
+    padding:8px 0 8px 28px;
+    margin:50px 0;
+  }
+  .pullquote p{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:clamp(1.4rem,3.6vw,2.3rem);
+    line-height:1.08;
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+  }
+  .pullquote p .red{text-shadow:0 0 24px rgba(225,16,33,.4)}
+
+  /* Cost of low-T split */
+  .cost{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .cost__list{display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+  .cost__list .row{
+    padding:16px 18px;background:var(--card-2);
+    font-family:var(--mono);font-size:.8rem;letter-spacing:.02em;color:var(--text);
+    display:flex;align-items:center;gap:10px;
+  }
+  .cost__list .row::before{content:"✕";color:var(--red-soft);font-weight:700}
+  .cost__note{
+    margin-top:24px;font-size:1.05rem;color:var(--text);
+    border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;background:var(--red-dim);
+  }
+  .cost__note b{color:var(--red-soft)}
+
+  /* Payoff cards */
+  .payoff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .payoff{
+    border:1px solid var(--border);border-radius:var(--r);
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    padding:22px 20px;transition:.2s;position:relative;overflow:hidden;
+  }
+  .payoff::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 100% 0%,rgba(225,16,33,.16),transparent 60%);
+    opacity:0;transition:opacity .25s;
+  }
+  .payoff:hover{border-color:var(--red-soft);transform:translateY(-3px)}
+  .payoff:hover::before{opacity:1}
+  .payoff .n{font-family:var(--mono);font-size:.66rem;color:var(--red-soft);letter-spacing:.16em}
+  .payoff h3{font-size:1rem;text-transform:uppercase;margin:12px 0 8px;position:relative}
+  .payoff p{color:var(--steel);font-size:.88rem;position:relative}
+
+  /* Product / spec sheet */
+  .product{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .product__img{
+    border:1px solid var(--border);border-radius:var(--r-lg);
+    background:linear-gradient(160deg,var(--card),var(--card-2));
+    padding:22px;position:relative;
+  }
+  .product__img::before{
+    content:"[ PRODUCT.SPEC / BENEFITS_1 ]";
+    position:absolute;top:-11px;left:16px;
+    font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;
+    color:var(--steel);background:var(--card);padding:2px 10px;border:1px solid var(--border);border-radius:20px;
+  }
+  .spec-rows{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:20px 0}
+  .spec-rows .sr{
+    display:flex;justify-content:space-between;gap:16px;
+    padding:13px 16px;background:var(--card-2);border-bottom:1px solid var(--border);
+    font-family:var(--mono);font-size:.78rem;
+  }
+  .spec-rows .sr:last-child{border-bottom:none}
+  .spec-rows .sr .k{color:var(--steel);letter-spacing:.08em;text-transform:uppercase;font-size:.68rem}
+  .spec-rows .sr .v{color:var(--text);font-weight:500;text-align:right}
+  .spec-rows .sr .v.on{color:var(--red-soft)}
+  .prodbullets{list-style:none;display:grid;gap:10px;margin:20px 0}
+  .prodbullets li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+  .prodbullets li::before{content:"✅";flex-shrink:0}
+  .buybox{
+    border:1px solid var(--border-2);border-radius:var(--r);
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    padding:22px;margin-top:4px;
+  }
+  .price{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .price .now{font-family:var(--sans);font-weight:700;font-size:2.6rem;color:var(--text)}
+  .price .was{font-family:var(--mono);color:var(--steel);text-decoration:line-through;font-size:1rem}
+  .price .save{
+    font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;
+    color:#fff;background:var(--red);padding:4px 9px;border-radius:6px;
+  }
+  .buybox .micro{font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;color:var(--steel);margin-top:14px;line-height:1.8}
+  .buybox .micro span{color:var(--red-soft)}
+
+  /* Five pillars */
+  .pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .pillar{
+    border:1px solid var(--border);border-radius:var(--r);background:var(--card-2);
+    padding:22px 18px;text-align:center;transition:.2s;
+  }
+  .pillar:hover{border-color:var(--red);transform:translateY(-4px)}
+  .pillar .p-ic{width:40px;height:40px;margin:0 auto 14px;color:var(--red-soft)}
+  .pillar h3{font-size:.9rem;text-transform:uppercase;margin-bottom:8px}
+  .pillar p{font-size:.82rem;color:var(--steel)}
+  .pillar .p-n{font-family:var(--mono);font-size:.62rem;color:var(--red-soft);letter-spacing:.14em;display:block;margin-bottom:10px}
+
+  /* Ingredients */
+  .ingr{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+  .ingr__img{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card-2);padding:18px;position:relative}
+  .ingr__img::before{
+    content:"[ LAB.PANEL / NATA-VERIFIED ]";
+    position:absolute;top:-11px;left:16px;
+    font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;
+    color:var(--steel);background:var(--card);padding:2px 10px;border:1px solid var(--border);border-radius:20px;
+  }
+
+  /* Protocol HUD stepper */
+  .protocol{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+  .pstep{
+    border:1px solid var(--border);
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    padding:28px 22px;position:relative;transition:.2s;
+  }
+  .protocol .pstep:not(:last-child){border-right:none}
+  .pstep:first-child{border-radius:var(--r) 0 0 var(--r)}
+  .pstep:last-child{border-radius:0 var(--r) var(--r) 0}
+  .pstep:hover{background:linear-gradient(180deg,#1a212a,var(--card));border-color:var(--border-2)}
+  .pstep .dot{
+    width:14px;height:14px;border-radius:50%;background:var(--red);
+    box-shadow:0 0 0 5px rgba(225,16,33,.15),0 0 16px 2px rgba(225,16,33,.6);
+    margin-bottom:20px;
+  }
+  .pstep .st-n{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;color:var(--steel)}
+  .pstep h3{font-size:1.3rem;text-transform:uppercase;margin:6px 0 10px}
+  .pstep p{color:var(--steel);font-size:.9rem}
+
+  /* Comparison */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .compare .col{border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+  .compare .col.win{border-color:var(--red);box-shadow:0 0 40px -18px rgba(225,16,33,.6)}
+  .compare .col .head{
+    padding:20px;background:var(--card);border-bottom:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .compare .col.win .head{background:linear-gradient(180deg,rgba(225,16,33,.18),var(--card))}
+  .compare .col .head h3{font-size:1.2rem;text-transform:uppercase}
+  .compare .col .head .badge{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;color:var(--red-soft);border:1px solid var(--red);border-radius:20px;padding:4px 10px}
+  .compare .col ul{list-style:none}
+  .compare .col li{
+    padding:14px 20px;border-bottom:1px solid var(--border);
+    font-family:var(--mono);font-size:.82rem;display:flex;gap:10px;align-items:center;color:var(--text);
+  }
+  .compare .col li:last-child{border-bottom:none}
+  .compare .col.win li::before{content:"✓";color:var(--red-soft);font-weight:700}
+  .compare .col.lose li{color:var(--steel)}
+  .compare .col.lose li::before{content:"✕";color:var(--steel-2);font-weight:700}
+  .compare-img{margin-top:26px;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:var(--card-2);padding:14px}
+
+  /* Code / creed */
+  .code-sec{position:relative}
+  .creed{border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:var(--card-2);margin-top:10px}
+  .creed .line{
+    padding:20px 26px;border-bottom:1px solid var(--border);
+    display:flex;gap:18px;align-items:center;
+    transition:background .2s;
+  }
+  .creed .line:hover{background:linear-gradient(90deg,rgba(225,16,33,.08),transparent)}
+  .creed .line:last-child{border-bottom:none}
+  .creed .line .no{font-family:var(--mono);font-size:.72rem;color:var(--red-soft);letter-spacing:.1em;min-width:44px}
+  .creed .line p{font-family:var(--sans);font-weight:600;font-size:clamp(1rem,2.3vw,1.4rem);text-transform:uppercase;letter-spacing:-.01em}
+  .creed-signoff{
+    padding:24px 26px;background:linear-gradient(90deg,var(--red-dim),transparent);
+    font-family:var(--sans);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--red-soft);
+  }
+  .code-lion{
+    position:absolute;right:0;top:40px;width:200px;opacity:.06;filter:grayscale(1);pointer-events:none;
+  }
+
+  /* Testimonials */
+  .tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .tcard{
+    border:1px solid var(--border);border-radius:var(--r);
+    background:linear-gradient(180deg,var(--card),var(--card-2));padding:26px;transition:.2s;
+  }
+  .tcard:hover{border-color:var(--border-2);transform:translateY(-3px)}
+  .tcard .stars{color:var(--red-soft);letter-spacing:3px;font-size:.9rem;margin-bottom:12px}
+  .tcard blockquote{font-size:1.02rem;color:var(--text);line-height:1.5}
+  .tcard .who{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--steel);margin-top:16px}
+  .illus-note{font-family:var(--mono);font-size:.64rem;color:var(--steel-2);margin-top:16px;letter-spacing:.05em}
+
+  /* Mission */
+  .mission{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+  .mission__vis{position:relative;text-align:center}
+  .mission__vis img{width:min(280px,80%);margin:0 auto;filter:drop-shadow(0 0 40px rgba(225,16,33,.3))}
+  .mission__vis .halo{position:absolute;inset:0;background:radial-gradient(circle at center,rgba(225,16,33,.2),transparent 60%);z-index:-1}
+
+  /* Guarantee */
+  .guarantee{display:grid;grid-template-columns:.7fr 1.3fr;gap:44px;align-items:center}
+  .guarantee__badges{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:center}
+  .guarantee__badges img{width:150px;height:auto}
+  .guarantee__cert{background:var(--card-2);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+
+  /* Ebook */
+  .ebook{
+    border:1px solid var(--border);border-radius:var(--r-lg);
+    background:linear-gradient(160deg,var(--card),var(--card-2));
+    padding:40px;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;position:relative;overflow:hidden;
+  }
+  .ebook::before{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(225,16,33,.18),transparent 70%)}
+  .ebook__img img{width:min(240px,70%);margin:0 auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+  .ebook form{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  .ebook input[type=email]{
+    flex:1;min-width:220px;
+    background:var(--black);border:1px solid var(--border-2);border-radius:10px;
+    padding:15px 18px;color:var(--text);font-family:var(--mono);font-size:.85rem;
+  }
+  .ebook input[type=email]:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(225,16,33,.2)}
+  .ebook .formnote{font-family:var(--mono);font-size:.64rem;color:var(--steel);margin-top:12px}
+
+  /* FAQ */
+  .faq{max-width:860px;margin:0 auto}
+  .qa{border:1px solid var(--border);border-radius:var(--r);margin-bottom:12px;overflow:hidden;background:var(--card-2)}
+  .qa button{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;color:var(--text);
+    padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    font-family:var(--sans);font-weight:600;font-size:1rem;
+  }
+  .qa button:hover{color:var(--red-soft)}
+  .qa .ic{font-family:var(--mono);color:var(--red-soft);font-size:1.3rem;transition:transform .25s;flex-shrink:0}
+  .qa.open .ic{transform:rotate(45deg)}
+  .qa .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .qa .ans p{padding:0 22px 20px;color:var(--steel);font-size:.95rem}
+
+  /* Final CTA */
+  .finalcta{
+    text-align:center;padding:100px 0;position:relative;overflow:hidden;
+    background:radial-gradient(circle at center,rgba(225,16,33,.12),transparent 60%);
+  }
+  .finalcta h2{font-size:clamp(2.4rem,7vw,4.6rem);text-transform:uppercase;line-height:.98}
+  .finalcta .red{text-shadow:0 0 30px rgba(225,16,33,.5)}
+  .finalcta p{max-width:60ch;margin:22px auto 34px;color:var(--steel);font-size:1.1rem}
+  .finalcta .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .finalcta__lion{width:90px;margin:0 auto 24px;filter:drop-shadow(0 0 26px rgba(225,16,33,.45))}
+
+  /* Footer */
+  footer{border-top:1px solid var(--border);background:var(--panel);padding:60px 0 30px;position:relative;z-index:1}
+  .foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px}
+  .foot-brand img{height:30px;background:#fff;border-radius:6px;padding:4px 8px;margin-bottom:14px}
+  .foot-brand .tag2{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--red-soft);text-transform:uppercase}
+  .foot-brand p{color:var(--steel);font-size:.86rem;margin-top:14px;max-width:34ch}
+  .foot-col h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);margin-bottom:16px}
+  .foot-col a{display:block;color:var(--text);font-size:.9rem;padding:6px 0;transition:color .18s}
+  .foot-col a:hover{color:var(--red-soft)}
+  .pay-row{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 24px}
+  .pay-chip{
+    font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--border);border-radius:6px;padding:7px 11px;color:var(--steel);background:var(--card-2);
+  }
+  .legal{border-top:1px solid var(--border);padding-top:24px;color:var(--steel-2);font-size:.74rem;line-height:1.7;font-family:var(--mono)}
+  .legal .disc{font-style:italic;max-width:100%}
+  .copyr{margin-top:14px;color:var(--steel)}
+
+  /* Scroll reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Responsive */
+  @media(max-width:1080px){
+    .payoff-grid{grid-template-columns:repeat(2,1fr)}
+    .pillars{grid-template-columns:repeat(3,1fr)}
+    .bigstats{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:900px){
+    .nav__links{display:none}
+    .burger{display:flex}
+    .hero__grid{grid-template-columns:1fr;gap:36px}
+    .hero__lion{width:90px;top:-26px}
+    .chart-wrap,.cost,.product,.ingr,.mission,.guarantee,.ebook,.code-sec .creed{grid-template-columns:1fr}
+    .ebook{grid-template-columns:1fr}
+    .protocol{grid-template-columns:1fr 1fr}
+    .protocol .pstep{border-right:1px solid var(--border)!important;border-radius:0!important}
+    .compare{grid-template-columns:1fr}
+    .bento{grid-template-columns:1fr 1fr}
+    #mobile-menu.open{display:block;border-top:1px solid var(--border);background:var(--panel)}
+    #mobile-menu a{display:block;padding:14px 24px;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);border-bottom:1px solid var(--border)}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 18px}
+    .sec{padding:56px 0}
+    .bento,.payoff-grid,.pillars,.tgrid,.cost__list,.protocol,.bigstats{grid-template-columns:1fr}
+    .protocol .pstep{border-radius:0!important}
+    .foot-grid{grid-template-columns:1fr}
+    .price .now{font-size:2.1rem}
+    .hero__stats{grid-template-columns:repeat(3,1fr)}
+    .guarantee__badges img{width:120px}
+    .nav__cta .btn.tablet-hide{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+
+<!-- 0. ANNOUNCEMENT TICKER -->
+<div class="ticker" role="marquee" aria-label="Announcements">
+  <div class="ticker__track" id="ticker">
+    <span>THIRD-PARTY TESTED ✦</span><span>60-DAY MONEY-BACK GUARANTEE ✦</span><span>FAST &amp; TRACKED SHIPPING ✦</span><span>NATA-APPROVED LAB TESTING ✦</span><span>JOIN THE BLOODLINE ✦</span>
+    <span>THIRD-PARTY TESTED ✦</span><span>60-DAY MONEY-BACK GUARANTEE ✦</span><span>FAST &amp; TRACKED SHIPPING ✦</span><span>NATA-APPROVED LAB TESTING ✦</span><span>JOIN THE BLOODLINE ✦</span>
+  </div>
+</div>
+
+<!-- 1. NAV -->
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="nav__logo" aria-label="Pure Blood Supps home">
+      <img src="https://purebloodsupps.com/cdn/shop/files/pure_blood_logos_7.png" alt="Pure Blood Supps wordmark logo" />
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#problem">The Problem</a>
+      <a href="#payoff">The Payoff</a>
+      <a href="#puretest">PureTest</a>
+      <a href="#code">The Code</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__cta">
+      <a href="#shop" class="btn sm tablet-hide">Shop PureTest</a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu">
+    <a href="#problem">The Problem</a>
+    <a href="#payoff">The Payoff</a>
+    <a href="#puretest">PureTest</a>
+    <a href="#code">The Code</a>
+    <a href="#results">Results</a>
+    <a href="#faq">FAQ</a>
+    <a href="#shop">Shop PureTest — $79.99</a>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- 2. HERO -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <div class="hero__eyebrow"><span class="kicker">Testosterone · Vitality · Dominance</span></div>
+      <h1>Reclaim what the<br>modern world<span class="accent">stole from you.</span></h1>
+      <p class="hero__sub">PureTest is the testosterone weapon for men who refuse to go soft. Clinically-backed. Brutally effective. Engineered to bring back the drive, aggression, and vitality that modern life bred out of you.</p>
+      <div class="hero__cta">
+        <a href="#shop" class="btn">Shop PureTest — $79.99</a>
+        <a href="#mission" class="btn ghost">Read the Manifesto</a>
+      </div>
+      <div class="hero__trust">
+        <span class="chip"><b>✦</b> Third-Party Tested</span>
+        <span class="chip"><b>✦</b> Fast &amp; Tracked Shipping</span>
+        <span class="chip"><b>✦</b> 60-Day Guarantee</span>
+        <span class="chip"><b>✦</b> 24/7 Support</span>
+      </div>
+    </div>
+    <div class="hero__visual reveal">
+      <img class="hero__lion" src="https://purebloodsupps.com/cdn/shop/files/pure_blood_logos_10.png" alt="Pure Blood lion mascot crest with red eyes" />
+      <div class="hero__panel">
+        <img src="https://purebloodsupps.com/cdn/shop/files/BENEFITS_1.png" alt="PureTest supplement tub surrounded by its five core benefit pillars" />
+        <div class="hero__stats">
+          <div class="statlet"><div class="num" data-count="180" data-suffix="">0</div><div class="lbl">Capsules</div></div>
+          <div class="statlet"><div class="num" data-count="750" data-suffix="mg">0</div><div class="lbl">Per Serving</div></div>
+          <div class="statlet"><div class="num" data-count="60" data-suffix="d">0</div><div class="lbl">Guarantee</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 3. THE EMERGENCY / PROBLEM -->
+<section class="sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">An Inconvenient Truth</span>
+      <h2 class="section-title">They turned men soft — <span class="red">on purpose.</span></h2>
+      <p class="lead">Testosterone in men has collapsed. Studies suggest the average man today carries a fraction of the testosterone his grandfather had at the same age. That's not bad luck — it's the by-product of a world built to keep you docile, distracted, and weak. Soft food. Soft lives. Soft men. We think that's a crime.</p>
+    </div>
+
+    <!-- CHART CREDIBILITY BLOCK -->
+    <div class="chart-wrap reveal">
+      <div class="chart-card">
+        <h4>[T-LEVEL] // Population Trend</h4>
+        <div class="chart-title">Average Male Testosterone, 1980 → Today</div>
+        <svg class="chart-svg" id="tchart" viewBox="0 0 520 300" role="img" aria-label="Line chart showing a steep decline in average male testosterone from 1980 to today">
+          <defs>
+            <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E11021" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#E11021" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff5a66"/>
+              <stop offset="100%" stop-color="#E11021"/>
+            </linearGradient>
+          </defs>
+          <!-- grid -->
+          <g stroke="#232A33" stroke-width="1">
+            <line x1="40" y1="40" x2="500" y2="40"/>
+            <line x1="40" y1="100" x2="500" y2="100"/>
+            <line x1="40" y1="160" x2="500" y2="160"/>
+            <line x1="40" y1="220" x2="500" y2="220"/>
+            <line x1="40" y1="260" x2="500" y2="260"/>
+          </g>
+          <!-- y labels -->
+          <g fill="#5E6875" font-family="'JetBrains Mono',monospace" font-size="10">
+            <text x="6" y="44">700</text>
+            <text x="6" y="104">550</text>
+            <text x="6" y="164">400</text>
+            <text x="6" y="224">250</text>
+          </g>
+          <!-- x labels -->
+          <g fill="#8A95A3" font-family="'JetBrains Mono',monospace" font-size="10">
+            <text x="40" y="280">1980</text>
+            <text x="150" y="280">1995</text>
+            <text x="260" y="280">2005</text>
+            <text x="370" y="280">2015</text>
+            <text x="452" y="280">TODAY</text>
+          </g>
+          <!-- area -->
+          <path id="tarea" d="M40,50 L150,78 L260,120 L370,168 L480,214 L480,260 L40,260 Z" fill="url(#fill)" opacity="0"/>
+          <!-- line -->
+          <path id="tline" d="M40,50 L150,78 L260,120 L370,168 L480,214" fill="none" stroke="url(#stroke)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- points -->
+          <g id="tpoints" fill="#08090B" stroke="#E11021" stroke-width="2.5">
+            <circle cx="40" cy="50" r="4"/>
+            <circle cx="150" cy="78" r="4"/>
+            <circle cx="260" cy="120" r="4"/>
+            <circle cx="370" cy="168" r="4"/>
+            <circle cx="480" cy="214" r="5" fill="#E11021"/>
+          </g>
+        </svg>
+        <div class="chart-legend">
+          <div class="item"><span class="dot"></span> Avg. total testosterone (ng/dL)</div>
+          <div class="item mono">SOURCE: POPULATION-LEVEL DECLINE, ILLUSTRATIVE</div>
+        </div>
+      </div>
+      <div>
+        <span class="tag">[ SYS.02 — THE DATA ]</span>
+        <div class="bigstats" style="margin-top:20px">
+          <div class="bigstat"><div class="num" data-count="1" data-prefix="-" data-suffix="%/yr">0</div><div class="lbl">Est. annual T decline</div></div>
+          <div class="bigstat"><div class="num" data-count="60" data-suffix="+" data-prefix="">0</div><div class="lbl">Yrs of downward trend</div></div>
+          <div class="bigstat"><div class="num" data-count="750" data-suffix="mg">0</div><div class="lbl">PureTest per serving</div></div>
+          <div class="bigstat"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Natural formula</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pullquote reveal">
+      <p>"The modern world is manufacturing weak men. <span class="red">Comfortable. Compliant. Neutered.</span> Not anymore."</p>
+    </div>
+
+    <div class="sec-head reveal" style="margin-bottom:28px">
+      <span class="tag">[ SYS.03 ]</span>
+      <h3 style="font-size:clamp(1.4rem,3.5vw,2rem);text-transform:uppercase;margin-top:12px">The War On Your Testosterone</h3>
+    </div>
+
+    <div class="bento">
+      <div class="cell reveal">
+        <span class="idx">[ THREAT.01 ]</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15h16M6 15c0-4 2-7 6-7s6 3 6 7M9 8V5m6 3V5"/></svg>
+        <h3>Seed Oils &amp; Processed Slop</h3>
+        <p>Frankenfood fried in industrial seed oils that tank your hormones and inflame your body.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="idx">[ THREAT.02 ]</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        <h3>A Life Lived Indoors</h3>
+        <p>No sun, no soil, no sky. Your body needs sunlight to build testosterone. You get a screen and a ceiling.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="idx">[ THREAT.03 ]</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 20v-6h12v6M6 14V8a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6M9 20v2M15 20v2"/></svg>
+        <h3>Chairs, Screens &amp; Endless Sitting</h3>
+        <p>Sedentary from cradle to grave. A body that never moves is a body that stops producing.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="idx">[ THREAT.04 ]</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h10M8 3l1 6a5 5 0 0 0-2 4v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-5a5 5 0 0 0-2-4l1-6M8 15h8"/></svg>
+        <h3>Microplastics &amp; Xenoestrogens</h3>
+        <p>Estrogen-mimicking chemicals in your water, food and packaging, quietly feminizing your biology.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="idx">[ THREAT.05 ]</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zM9 9l6 0M12 6v6"/></svg>
+        <h3>Chronic Stress &amp; Garbage Sleep</h3>
+        <p>Cortisol up, testosterone down. You're wired, tired, and running on fumes.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="idx">[ THREAT.06 ]</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2 5h5l-4 4 2 6-5-3-5 3 2-6-4-4h5z"/></svg>
+        <h3>A Culture That Worships Weakness</h3>
+        <p>Soft opinions, soft bodies, soft men. Society rewards the passive and punishes the strong.</p>
+      </div>
+    </div>
+
+    <p class="cost__note reveal" style="margin-top:28px">The result? A generation that's <b>anxious, exhausted, and half-alive.</b> You weren't born to feel like this — you were conditioned into it. PureBlood exists to end that.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 4. THE COST OF LOW-T -->
+<section class="sec">
+  <div class="wrap cost">
+    <div class="reveal">
+      <span class="tag">[ DIAGNOSTIC — THE BEFORE ]</span>
+      <h2 class="section-title">This is what low testosterone is <span class="red">costing you.</span></h2>
+      <p class="cost__note">You've been told this is "just getting older." It isn't. It's <b>low testosterone</b> — and it's reversible.</p>
+    </div>
+    <div class="cost__list reveal">
+      <div class="row">No drive when the alarm goes off</div>
+      <div class="row">Brain fog and zero focus</div>
+      <div class="row">A gut that won't budge</div>
+      <div class="row">Confidence in the gutter</div>
+      <div class="row">No spark in the bedroom</div>
+      <div class="row">Tired by 2pm, every day</div>
+      <div class="row">Passive in the boardroom and at home</div>
+      <div class="row">Watching life instead of leading it</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 5. THE PAYOFF -->
+<section class="sec" id="payoff">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">When Your T Is Where Nature Intended</span>
+      <h2 class="section-title">High testosterone <span class="red">changes everything.</span></h2>
+      <p class="lead">This is bigger than a supplement. Get your testosterone back to where biology intended and every single domain of your life levels up.</p>
+    </div>
+    <div class="payoff-grid">
+      <div class="payoff reveal"><span class="n">[ 01 ]</span><h3>Relentless Drive</h3><p>Wake up with fire. Attack the day instead of surviving it.</p></div>
+      <div class="payoff reveal"><span class="n">[ 02 ]</span><h3>Primal Confidence</h3><p>Walk into any room like you own it. Presence people feel before you speak.</p></div>
+      <div class="payoff reveal"><span class="n">[ 03 ]</span><h3>Sexual Dominance</h3><p>Libido, performance, and the raw magnetism women are wired to want.</p></div>
+      <div class="payoff reveal"><span class="n">[ 04 ]</span><h3>Lean, Hard Muscle</h3><p>Build muscle and strip fat the way your body was actually designed to.</p></div>
+      <div class="payoff reveal"><span class="n">[ 05 ]</span><h3>Razor Focus</h3><p>Kill the fog. Think fast, decide hard, execute without hesitation.</p></div>
+      <div class="payoff reveal"><span class="n">[ 06 ]</span><h3>Iron Discipline</h3><p>The self-mastery to lead your family, your business, and your life.</p></div>
+      <div class="payoff reveal"><span class="n">[ 07 ]</span><h3>Aggression On Demand</h3><p>Controlled, channeled intensity. The killer instinct that gets things done.</p></div>
+      <div class="payoff reveal"><span class="n">[ 08 ]</span><h3>Vitality &amp; Energy</h3><p>The deep, all-day fuel of a man operating in his prime.</p></div>
+    </div>
+    <p class="cost__note reveal" style="margin-top:28px">This is your birthright. <b>PureTest just helps you take it back.</b></p>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 6. MEET PURETEST -->
+<section class="sec" id="puretest">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">The Weapon</span>
+      <h2 class="section-title">PureTest — the ultimate testosterone weapon for <span class="red">modern men.</span></h2>
+    </div>
+    <div class="product">
+      <div class="product__img reveal">
+        <img src="https://purebloodsupps.com/cdn/shop/files/BENEFITS_1.png" alt="PureTest testosterone supplement tub with its five benefit pillars" />
+      </div>
+      <div class="reveal">
+        <p class="lead" style="color:var(--text)">180 clinical-grade capsules. 750mg of no-BS, no-filler firepower per serving. Powerful herbs and minerals men have relied on for centuries — refined for real, measurable performance. This isn't a vitamin. It's a daily weapon. <span class="red">No limit. Just legacy.</span></p>
+
+        <div class="spec-rows">
+          <div class="sr"><span class="k">Capsules</span><span class="v">180 clinical-grade</span></div>
+          <div class="sr"><span class="k">Per Serving</span><span class="v">750mg firepower</span></div>
+          <div class="sr"><span class="k">Fillers</span><span class="v on">Zero</span></div>
+          <div class="sr"><span class="k">Lab Testing</span><span class="v on">NATA-Approved</span></div>
+          <div class="sr"><span class="k">Formula</span><span class="v">100% Natural</span></div>
+        </div>
+
+        <ul class="prodbullets">
+          <li>Testosterone &amp; Sexual Health</li>
+          <li>Clinically-Backed Ingredients</li>
+          <li>Sustained Energy &amp; Focus</li>
+          <li>Immune &amp; Inflammation Support</li>
+          <li>Mental Clarity &amp; Stress Control</li>
+        </ul>
+
+        <div class="buybox">
+          <div class="price">
+            <span class="now">$79.99</span>
+            <span class="was">$109.99</span>
+            <span class="save">Save $30</span>
+          </div>
+          <a href="#shop" class="btn" style="width:100%;justify-content:center">Add to Cart — Shop Now</a>
+          <div class="micro">
+            <span>✦</span> Third-Party Tested &nbsp; <span>✦</span> NATA-Approved &nbsp; <span>✦</span> 60-Day Money-Back Guarantee<br>
+            <span>✦</span> Free High-T Blueprint with every order.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 7. FIVE PILLARS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">[ FORMULA.MAP ]</span>
+      <h2 class="section-title">Five fronts. <span class="red">One formula.</span></h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="p-n">[ 01 ]</span>
+        <svg class="p-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>
+        <h3>Testosterone Surge</h3>
+        <p>Unleashes natural T production. No BS.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="p-n">[ 02 ]</span>
+        <svg class="p-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+        <h3>Primal Drive</h3>
+        <p>Ignites libido. Boosts sexual dominance.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="p-n">[ 03 ]</span>
+        <svg class="p-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20M6 8l6-6 6 6M4 14h16"/></svg>
+        <h3>Relentless Energy</h3>
+        <p>Power through training, work, and life.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="p-n">[ 04 ]</span>
+        <svg class="p-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3a4 4 0 0 1 6 0 4 4 0 0 1 3 6 4 4 0 0 1-3 6 4 4 0 0 1-6 0 4 4 0 0 1-3-6 4 4 0 0 1 3-6zM12 9v6M9 12h6"/></svg>
+        <h3>Mental Edge</h3>
+        <p>Sharp focus. Enhanced memory. Killer confidence.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="p-n">[ 05 ]</span>
+        <svg class="p-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/></svg>
+        <h3>Immune Armor</h3>
+        <p>Stay resilient. Strong inside and out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 8. INGREDIENTS -->
+<section class="sec">
+  <div class="wrap ingr">
+    <div class="ingr__img reveal">
+      <img src="https://purebloodsupps.com/cdn/shop/files/NUTRITIONALCONTENT_B.png" alt="PureTest supplement facts and nutritional content panel" />
+    </div>
+    <div class="reveal">
+      <span class="tag">[ LABEL = TUB ]</span>
+      <h2 class="section-title">No filler. No fluff. <span class="red">Just what works.</span></h2>
+      <p class="lead">Every capsule is loaded with clinically-dosed, third-party-tested ingredients — raw, ancestral compounds men have trusted for centuries, refined for modern performance. NATA-approved lab tested. What's on the label is what's in the tub.</p>
+      <div class="spec-rows" style="margin-top:26px">
+        <div class="sr"><span class="k">Dosing</span><span class="v">Clinically-dosed</span></div>
+        <div class="sr"><span class="k">Testing</span><span class="v on">Third-party verified</span></div>
+        <div class="sr"><span class="k">Compounds</span><span class="v">Raw &amp; ancestral</span></div>
+        <div class="sr"><span class="k">Transparency</span><span class="v on">Label = Tub</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 9. THE PROTOCOL -->
+<section class="sec" id="protocol">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">[ HUD.STEPPER — DAILY OPS ]</span>
+      <h2 class="section-title">The daily <span class="red">protocol.</span></h2>
+      <p class="lead">The supplement is the spark. The lifestyle is the fire. Run the protocol.</p>
+    </div>
+    <div class="protocol reveal">
+      <div class="pstep">
+        <div class="dot"></div>
+        <div class="st-n">STEP.01</div>
+        <h3>Fuel</h3>
+        <p>Take your PureTest every morning. Consistency is king.</p>
+      </div>
+      <div class="pstep">
+        <div class="dot"></div>
+        <div class="st-n">STEP.02</div>
+        <h3>Train</h3>
+        <p>Lift heavy. Move daily. Get in the sun. Earn your testosterone.</p>
+      </div>
+      <div class="pstep">
+        <div class="dot"></div>
+        <div class="st-n">STEP.03</div>
+        <h3>Recover</h3>
+        <p>Sleep like it's a discipline. Kill the stress. Let your body rebuild.</p>
+      </div>
+      <div class="pstep">
+        <div class="dot"></div>
+        <div class="st-n">STEP.04</div>
+        <h3>Compound</h3>
+        <p>Show up every single day. Compounding is the cheat code. Become unrecognizable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 10. COMPARISON -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">[ BENCHMARK ]</span>
+      <h2 class="section-title">PureTest vs. <span class="red">everyone else.</span></h2>
+    </div>
+    <div class="compare">
+      <div class="col win reveal">
+        <div class="head"><h3>PureTest</h3><span class="badge">RECOMMENDED</span></div>
+        <ul>
+          <li>Under $1.60 / serving</li>
+          <li>No filler ingredients</li>
+          <li>Clinically-backed formula</li>
+          <li>Trusted manufacturer</li>
+          <li>NATA-approved lab test</li>
+          <li>60-day money-back guarantee</li>
+        </ul>
+      </div>
+      <div class="col lose reveal">
+        <div class="head"><h3>Other Brands</h3></div>
+        <ul>
+          <li>Over $2.40 / serving</li>
+          <li>Estrogenic fillers</li>
+          <li>Weak formula</li>
+          <li>Dropshipped from China</li>
+          <li>No lab tests</li>
+          <li>30-day guarantee</li>
+        </ul>
+      </div>
+    </div>
+    <div class="compare-img reveal">
+      <img src="https://purebloodsupps.com/cdn/shop/files/COMPARISON.png" alt="Comparison graphic: PureTest versus other brands on price and quality checklist" />
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 11. THE PUREBLOOD CODE -->
+<section class="sec code-sec" id="code">
+  <img class="code-lion" src="https://purebloodsupps.com/cdn/shop/files/pure_blood_logos_10.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">This Is A Lifestyle, Not A Label</span>
+      <h2 class="section-title">The PureBlood <span class="red">Code.</span></h2>
+      <p class="lead">PureBlood isn't just a supplement brand — it's a lifestyle. A rebellion against a world that wants you soft. If you carry the blood, you live by the code:</p>
+    </div>
+    <div class="creed reveal">
+      <div class="line"><span class="no">I.</span><p>I will not apologize for wanting to be strong.</p></div>
+      <div class="line"><span class="no">II.</span><p>I will train my body like my life depends on it — because it does.</p></div>
+      <div class="line"><span class="no">III.</span><p>I will chase the sun, the iron, and the hard road.</p></div>
+      <div class="line"><span class="no">IV.</span><p>I will lead, provide, and protect.</p></div>
+      <div class="line"><span class="no">V.</span><p>I will not outsource my strength, my mind, or my manhood.</p></div>
+      <div class="line"><span class="no">VI.</span><p>I will level up — or get left behind.</p></div>
+      <div class="creed-signoff">Save men. And through that, save humanity.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 12. RESULTS / TESTIMONIALS -->
+<section class="sec" id="results">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">[ FIELD REPORTS ]</span>
+      <h2 class="section-title">Men who stopped <span class="red">settling.</span></h2>
+    </div>
+    <div class="tgrid">
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Six weeks in and I feel 21 again. The drive is back, the confidence is back. My wife noticed before I did."</blockquote>
+        <div class="who">— Marcus D., 38</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The fog lifted. I'm sharper at work, harder in the gym, and I actually want to lead again."</blockquote>
+        <div class="who">— Cole R., 44</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I stopped feeling like a passenger in my own life. PureTest lit the fire back up."</blockquote>
+        <div class="who">— Jaydon T., 31</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Down 14 lbs, up in every lift, and my testosterone bloodwork climbed for the first time in years."</blockquote>
+        <div class="who">— Anton V., 41</div>
+      </div>
+    </div>
+    <p class="illus-note">Illustrative testimonials. Individual results vary.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 13. MISSION / FOUNDER -->
+<section class="sec" id="mission">
+  <div class="wrap mission">
+    <div class="reveal">
+      <span class="tag">[ MISSION.BRIEF ]</span>
+      <h2 class="section-title">We didn't build this to <span class="red">play nice.</span></h2>
+      <p class="lead" style="color:var(--text)">PureBlood Supps wasn't created to play nice. It was built to wage war against the weak modern world trying to strip men of their power. We fight back against processed food, synthetic hormones, low-T lifestyles, and the soy-boy indoctrination killing masculine energy. This brand isn't about supplements. It's a rebellion. A movement. A mission to restore strength, discipline, and dominance in men who refuse to settle for soft. No fluff. No filler. Just raw, clinical-grade formulas built for war.</p>
+      <div class="pullquote" style="margin:34px 0 0">
+        <p>"PureBlood exists to save men. And through that, save humanity. <span class="red">You either level up — or get left behind.</span>"</p>
+      </div>
+    </div>
+    <div class="mission__vis reveal">
+      <div class="halo"></div>
+      <img src="https://purebloodsupps.com/cdn/shop/files/pure_blood_logos_10.png" alt="Pure Blood lion crest emblem" />
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 14. GUARANTEE + TRUST -->
+<section class="sec">
+  <div class="wrap guarantee">
+    <div class="guarantee__badges reveal">
+      <img src="https://purebloodsupps.com/cdn/shop/files/60DAY.png" alt="60-day money-back guarantee badge" />
+      <div class="guarantee__cert">
+        <img src="https://purebloodsupps.com/cdn/shop/files/CERTIFICATION-W.png" alt="Third-party and NATA-approved lab certification marks" />
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="tag">[ RISK.PROFILE = ZERO ]</span>
+      <h2 class="section-title">60 days. Zero risk. <span class="red">All upside.</span></h2>
+      <p class="lead">Run the protocol for 60 days. If you don't feel the difference — more drive, more energy, more you — we refund every cent. That's how sure we are. Third-party tested. NATA-approved. Built for men who don't accept excuses.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 15. FREE EBOOK -->
+<section class="sec">
+  <div class="wrap">
+    <div class="ebook reveal">
+      <div class="ebook__img">
+        <img src="https://purebloodsupps.com/cdn/shop/files/EBOOK.png" alt="The High-T Blueprint free ebook cover" />
+      </div>
+      <div>
+        <span class="kicker">Lead Magnet</span>
+        <h2 class="section-title" style="margin-top:.3em">Free: The High-T <span class="red">Blueprint.</span></h2>
+        <p class="lead">The free field guide to naturally maximizing your testosterone — the food, training, sunlight and sleep protocols that rebuild a man. Yours free with every order, or drop your email and we'll send it now.</p>
+        <form id="ebook-form" novalidate>
+          <input type="email" name="email" placeholder="you@bloodline.com" aria-label="Email address" required />
+          <button type="submit" class="btn">Send Me The Blueprint</button>
+        </form>
+        <div class="formnote" id="ebook-note">No spam. Just war plans.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- 16. FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="tag">[ SYS.FAQ ]</span>
+      <h2 class="section-title">Questions, <span class="red">answered.</span></h2>
+    </div>
+    <div class="faq">
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>Is PureTest natural, or is it a steroid?</span><span class="ic">+</span></button>
+        <div class="ans"><p>100% natural. No synthetic hormones. Clinically-backed herbs and minerals that support your body's own testosterone production.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>How fast will I feel it?</span><span class="ic">+</span></button>
+        <div class="ans"><p>Many men feel the energy and focus within days. The deeper testosterone-driven changes compound over 4–8 weeks of consistent daily use.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>Who is PureTest for?</span><span class="ic">+</span></button>
+        <div class="ans"><p>Any man done feeling tired, soft and flat — and any man who wants to operate at his absolute peak. Trusted by men (and even some women) for energy, focus and total-body wellness.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>Is it safe and tested?</span><span class="ic">+</span></button>
+        <div class="ans"><p>Yes. Third-party and NATA-approved lab tested. What's on the label is what's in the tub — no fillers, no junk.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>What if it doesn't work for me?</span><span class="ic">+</span></button>
+        <div class="ans"><p>You're covered by our 60-day money-back guarantee. Zero risk.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>How do I take it?</span><span class="ic">+</span></button>
+        <div class="ans"><p>Daily, as directed on the label, ideally every morning. Consistency is everything.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17. FINAL CTA -->
+<section class="finalcta" id="shop">
+  <div class="wrap">
+    <img class="finalcta__lion reveal" src="https://purebloodsupps.com/cdn/shop/files/pure_blood_logos_10.png" alt="Pure Blood lion crest" />
+    <h2 class="reveal">Level up — or <span class="red">get left behind.</span></h2>
+    <p class="reveal">The world made you soft. PureTest helps you take it all back — your drive, your edge, your birthright. The bloodline is calling.</p>
+    <div class="cta-row reveal">
+      <a href="#puretest" class="btn">Shop PureTest — $79.99</a>
+      <a href="#code" class="btn ghost">Join The Bloodline</a>
+    </div>
+  </div>
+</section>
+
+<!-- 18. FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="https://purebloodsupps.com/cdn/shop/files/pure_blood_logos_7.png" alt="Pure Blood Supps wordmark logo" />
+        <div class="tag2">No limit. Just legacy.</div>
+        <p>Join the bloodline. No spam. Just war plans.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="#puretest">PureTest</a>
+        <a href="#faq">The Blueprint</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#mission">About</a>
+        <a href="#shop">Contact</a>
+        <a href="#code">The Code</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="#faq">FAQ</a>
+        <a href="#shop">Shipping</a>
+        <a href="#shop">Returns</a>
+        <a href="#faq">60-Day Guarantee</a>
+      </div>
+    </div>
+
+    <div class="pay-row" aria-label="Accepted payment methods">
+      <span class="pay-chip">Amex</span>
+      <span class="pay-chip">Apple Pay</span>
+      <span class="pay-chip">Google Pay</span>
+      <span class="pay-chip">Mastercard</span>
+      <span class="pay-chip">PayPal</span>
+      <span class="pay-chip">Shop Pay</span>
+      <span class="pay-chip">Union Pay</span>
+      <span class="pay-chip">Visa</span>
+    </div>
+
+    <div class="legal">
+      <p class="disc">These statements have not been evaluated by the FDA or TGA. This product is not intended to diagnose, treat, cure, or prevent any disease. Testimonials are illustrative; individual results vary. Consult your physician before beginning any supplement program.</p>
+      <p class="copyr">© Pure Blood Supps. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Scroll progress bar */
+  var progress = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    progress.style.width = (scrolled * 100) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* Mobile menu */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobile-menu');
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  /* Scroll reveal */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* Count-up stats */
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var prefix = el.getAttribute('data-prefix') || '';
+    var dur = 1400, start = null;
+    var isFloat = target % 1 !== 0;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = target * eased;
+      el.textContent = prefix + (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + (isFloat ? target.toFixed(1) : target) + suffix;
+    }
+    if(reduce){ el.textContent = prefix + target + suffix; return; }
+    requestAnimationFrame(step);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ animateCount(en.target); cio.unobserve(en.target); }
+      });
+    }, {threshold:0.6});
+    counters.forEach(function(el){ cio.observe(el); });
+  } else {
+    counters.forEach(animateCount);
+  }
+
+  /* Chart line draw-in */
+  var line = document.getElementById('tline');
+  var area = document.getElementById('tarea');
+  if(line){
+    var len = line.getTotalLength();
+    if(!reduce){
+      line.style.strokeDasharray = len;
+      line.style.strokeDashoffset = len;
+      line.style.transition = 'stroke-dashoffset 1.8s ease';
+    }
+    var chartObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          if(!reduce){ line.style.strokeDashoffset = '0'; }
+          if(area){ area.style.transition='opacity 1.4s ease .4s'; area.style.opacity='1'; }
+          chartObs.disconnect();
+        }
+      });
+    }, {threshold:0.4});
+    chartObs.observe(line.closest('svg'));
+  }
+
+  /* FAQ accordion */
+  var qas = document.querySelectorAll('.qa');
+  qas.forEach(function(qa){
+    var btn = qa.querySelector('button');
+    var ans = qa.querySelector('.ans');
+    btn.addEventListener('click', function(){
+      var isOpen = qa.classList.contains('open');
+      qas.forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.ans').style.maxHeight = null;
+        other.querySelector('button').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        qa.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* Ebook form */
+  var form = document.getElementById('ebook-form');
+  var note = document.getElementById('ebook-note');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = form.querySelector('input[type=email]').value.trim();
+      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if(valid){
+        note.textContent = '✦ Locked in. The High-T Blueprint is on its way to ' + email;
+        note.style.color = 'var(--red-soft)';
+        form.reset();
+      } else {
+        note.textContent = 'Enter a valid email so we can send the Blueprint.';
+        note.style.color = 'var(--red-soft)';
+      }
+    });
+  }
+
+  /* Smooth anchor + close menu (native smooth-scroll handles most; guard for old browsers) */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length > 1){
+        var t = document.querySelector(id);
+        if(t){
+          e.preventDefault();
+          t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+        }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
