@@ -860,7 +860,7 @@
   .gallery__main{aspect-ratio:1/1;background:radial-gradient(circle at 50% 42%,#2A2A2F,#101012 72%);border:1px solid rgba(224,31,39,.4);border-radius:4px;overflow:hidden;position:relative;box-shadow:0 34px 80px -30px rgba(0,0,0,.95),0 0 70px -22px rgba(224,31,39,.45)}
   .gallery__main img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 24px 40px rgba(0,0,0,.65))}
   .gallery__main::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 90px rgba(0,0,0,.5),inset 0 0 0 1px rgba(224,31,39,.18)}
-  .gallery__thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin-top:.6rem}
+  .gallery__thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:.55rem;margin-top:.6rem}
   .gthumb{aspect-ratio:1/1;background:#141416;border:1px solid var(--smoke-2);border-radius:3px;overflow:hidden;cursor:pointer;padding:0;transition:border-color .25s ease}
   .gthumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:.75;transition:opacity .25s ease}
   .gthumb:hover{border-color:var(--gold-deep)} .gthumb:hover img{opacity:1}
@@ -1621,6 +1621,7 @@
           </div>
           <div class="gallery__thumbs">
             <button class="gthumb active" type="button" data-src="puretest-studio.png" aria-label="Studio product shot"><img src="puretest-studio.png" alt="PureTest bottle studio shot" /></button>
+            <button class="gthumb" type="button" data-src="puretest-benefits.jpg" aria-label="Benefits overview"><img src="puretest-benefits.jpg" alt="PureTest benefits: testosterone surge, primal drive, increased energy, mental clarity, immunity armor and quick recovery" /></button>
             <button class="gthumb" type="button" data-src="puretest-gym.jpg" aria-label="Gym shot with capsules"><img src="puretest-gym.jpg" alt="PureTest bottle in the gym with capsules" /></button>
             <button class="gthumb" type="button" data-src="puretest-open.jpg" aria-label="Bottle open with capsules"><img src="puretest-open.jpg" alt="PureTest bottle opened beside its capsules" /></button>
             <button class="gthumb" type="button" data-src="puretest-lineup.jpg" aria-label="Row of bottles"><img src="puretest-lineup.jpg" alt="A row of PureTest bottles" /></button>
