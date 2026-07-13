@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pure Blood Supps — PureTest | The Bloodline. No Limit. Just Legacy.</title>
-<meta name="description" content="PureTest by Pure Blood Supps — the testosterone weapon for men who refuse to go soft. Clinically-backed, third-party tested, NATA-approved. Reclaim your drive, edge, and birthright." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>PureTest — Natural Testosterone Booster for Men | Pure Blood Supps</title>
+<meta name="description" content="PureTest — the natural testosterone booster for men who refuse to go soft. Third-party tested, 60-day money-back guarantee. Reclaim your drive." />
+<link rel="canonical" href="https://purebloodsupps.com/" />
+<meta name="robots" content="index,follow" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Pure Blood Supps" />
+<meta property="og:title" content="PureTest — Natural Testosterone Booster for Men | Pure Blood Supps" />
+<meta property="og:description" content="The testosterone weapon for men who refuse to go soft. Clinically-backed. Third-party tested. 60-day money-back guarantee." />
+<meta property="og:image" content="https://purebloodsupps.com/puretest-studio.jpg" />
+<meta property="og:url" content="https://purebloodsupps.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PureTest — Natural Testosterone Booster for Men | Pure Blood Supps" />
+<meta name="twitter:description" content="Clinically-backed testosterone support for men. 60-day money-back guarantee." />
+<meta name="twitter:image" content="https://purebloodsupps.com/puretest-studio.jpg" />
+<link rel="icon" type="image/png" href="crowned-lion.png" />
+<meta name="theme-color" content="#0B0B0C" />
+<link rel="preload" as="image" href="puretest-studio.jpg" fetchpriority="high" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
@@ -34,13 +49,13 @@
     --head:'Oswald','Anton',sans-serif;
     --editorial:'Jost',system-ui,sans-serif;
     --sans:'Jost',system-ui,sans-serif;
-    --gold-grad:linear-gradient(135deg,#B8121C 0%,#E42832 50%,#B8121C 100%);
+    --gold-grad:linear-gradient(135deg,#B8121C 0%,#D31D25 50%,#B8121C 100%);
     --maxw:1200px;
     --ease:cubic-bezier(.16,1,.3,1);
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:96px}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
   body{
@@ -61,12 +76,14 @@
     pointer-events:none;
     z-index:0;
     opacity:.38;
+    transform:translateZ(0);will-change:transform;
     background:
       radial-gradient(ellipse at 15% 10%, rgba(123,17,19,.10), transparent 45%),
       radial-gradient(ellipse at 85% 90%, rgba(224,31,39,.06), transparent 50%),
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   }
   main,header,footer,section{position:relative;z-index:1}
+  .ingredients,.protocol,.compare,.code-sec,.results,.mission,.guarantee,.ebook,.faq{content-visibility:auto;contain-intrinsic-size:auto 900px}
 
   img{max-width:100%;display:block;height:auto}
   a{color:inherit;text-decoration:none}
@@ -110,6 +127,7 @@
   .container{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.15rem,4vw,2.5rem)}
 
   section{padding:clamp(4.5rem,9vw,8rem) 0}
+  section[id],[id="top"]{scroll-margin-top:92px}
 
   /* ---------- Ornamental gold divider ---------- */
   .ornament{
@@ -183,6 +201,11 @@
   }
   .btn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
   a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .skip-link{position:fixed;top:-100px;left:1rem;z-index:200;background:var(--char-000);color:var(--bone);
+    font-family:var(--head);font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:.85em 1.4em;border:1px solid var(--gold);transition:top .2s var(--ease)}
+  .skip-link:focus{top:1rem}
+  .bundle:focus-within{outline:2px solid var(--gold);outline-offset:3px}
 
   /* ---------- Announcement Ticker ---------- */
   .ticker{
@@ -350,7 +373,7 @@
     color:var(--bone);display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;justify-content:center;
   }
   .hero-price b{font-weight:700;font-size:1.18rem;color:var(--gold-soft)}
-  .hero-price s{color:var(--grey-dim);font-size:.82rem}
+  .hero-price s{color:var(--grey);font-size:.82rem}
   .hero-price em{font-style:normal;color:var(--bone-dim);font-size:.68rem;letter-spacing:.14em}
   .crest{
     height:clamp(64px,8.5vh,96px);width:auto;
@@ -442,7 +465,7 @@
   }
 
   /* ---------- Scroll reveal ---------- */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
   .reveal.in{opacity:1;transform:none}
   .reveal.d1{transition-delay:.08s}
   .reveal.d2{transition-delay:.16s}
@@ -523,12 +546,11 @@
   .war-zone{
     margin-top:4rem;
     padding:clamp(1.6rem,4.5vw,3.2rem);
-    background:linear-gradient(170deg,#5B5B5F,#404044);
-    border:1px solid rgba(0,0,0,.5);
+    background:linear-gradient(170deg,#232328,#151518);
+    border:1px solid rgba(243,242,239,.12);
     position:relative;
     box-shadow:0 30px 70px -30px rgba(0,0,0,.8);
   }
-  .war-zone::before{content:"";position:absolute;inset:7px;border:1px solid rgba(243,242,239,.14);pointer-events:none}
   .war-zone .war-title{color:#F3F2EF;margin-top:0}
   .closer{
     max-width:760px;margin:3.4rem auto 0;text-align:center;
@@ -545,7 +567,7 @@
 
   /* Briefing panel */
   .brief{display:grid;grid-template-columns:minmax(280px,380px) 1fr;border:1px solid rgba(0,0,0,.45);
-    background:linear-gradient(165deg,#606064,#47474B);max-width:1080px;margin:0 auto}
+    background:linear-gradient(165deg,#26262B,#17171A);max-width:1080px;margin:0 auto}
   .brief-list{border-right:1px solid rgba(243,242,239,.16)}
   .brief-list .bl-head{font-family:var(--head);font-weight:600;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;
     color:#CFCDC9;padding:1rem 1.4rem;border-bottom:1px solid rgba(243,242,239,.16)}
@@ -556,14 +578,14 @@
   .brief-item .bi-title{font-family:var(--head);font-weight:500;font-size:.86rem;letter-spacing:.09em;text-transform:uppercase;
     color:#CFCDC9;transition:color .25s}
   .brief-item:hover .bi-title{color:#FFFFFF}
-  .brief-item.active{background:rgba(25,25,27,.3);box-shadow:inset 4px 0 0 var(--gold),0 0 30px -10px rgba(224,31,39,.5)}
+  .brief-item.active{background:rgba(224,31,39,.08);box-shadow:inset 4px 0 0 var(--gold),0 0 30px -10px rgba(224,31,39,.4)}
   .brief-item.active .bi-num{color:#FF4A52}
   .brief-item.active .bi-title{color:#FFFFFF;font-weight:600}
   .brief-detail{display:none;padding:2.6rem 2.8rem;position:relative;overflow:hidden;
     background:radial-gradient(ellipse at 80% 0%,rgba(25,25,27,.25),transparent 55%)}
   .brief-detail.active{display:block;animation:warFade .45s var(--ease)}
   .brief-detail .bd-ghost{position:absolute;bottom:-2.6rem;right:-.3rem;font-family:var(--serif);font-size:13rem;line-height:1;
-    color:transparent;-webkit-text-stroke:1.2px rgba(25,25,27,.35);pointer-events:none;user-select:none}
+    color:transparent;-webkit-text-stroke:1.2px rgba(224,31,39,.16);pointer-events:none;user-select:none}
   .brief-detail .bd-file{font-family:var(--head);font-weight:600;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;
     color:#FF4A52;margin-bottom:1.1rem;text-shadow:0 0 16px rgba(224,31,39,.6)}
   .brief-detail h4{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3vw,2.2rem);letter-spacing:.01em;
@@ -583,7 +605,7 @@
   }
 
   /* ---------- COST OF LOW-T ---------- */
-  .cost{background:
+  .cost{border-top:1px solid rgba(224,31,39,.12);background:
     radial-gradient(ellipse 80% 60% at 50% 20%, rgba(224,31,39,.1), transparent 60%),
     linear-gradient(180deg,var(--char-850),var(--char-900))}
   .cost-list{
@@ -648,15 +670,15 @@
   .buybar{
     position:fixed;left:0;right:0;bottom:0;z-index:60;
     display:flex;align-items:center;justify-content:center;gap:1.1rem;
-    padding:.7rem clamp(1rem,4vw,2rem);
-    background:rgba(17,17,19,.94);
-    backdrop-filter:blur(12px);
+    padding:.7rem clamp(1rem,4vw,2rem) calc(.7rem + env(safe-area-inset-bottom,0px));
+    background:rgba(17,17,19,.96);
     border-top:1px solid rgba(224,31,39,.35);
     box-shadow:0 -16px 44px rgba(0,0,0,.6);
     transform:translateY(110%);
-    transition:transform .55s var(--ease);
+    visibility:hidden;
+    transition:transform .55s var(--ease),visibility 0s linear .55s;
   }
-  .buybar.show{transform:none}
+  .buybar.show{transform:none;visibility:visible;transition:transform .55s var(--ease),visibility 0s}
   .bb-crest{height:34px;width:auto;flex:0 0 auto}
   .bb-info{display:flex;flex-direction:column;gap:.15rem;min-width:0}
   .bb-name{font-family:var(--serif);font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone);line-height:1}
@@ -794,9 +816,9 @@
   .decline-wrap{
     display:grid;grid-template-columns:1.35fr .9fr;gap:2.2rem;align-items:center;
     background:linear-gradient(160deg,var(--char-800),var(--char-900));
-    border:1px solid var(--smoke);padding:2.4rem;position:relative;
+    border:1px solid rgba(224,31,39,.28);padding:2.4rem;position:relative;
   }
-  .decline-wrap::before{content:"";position:absolute;inset:8px;border:1px solid rgba(224,31,39,.22);pointer-events:none}
+  .decline-wrap::before{content:"";position:absolute;inset:8px;border:1px solid rgba(243,242,239,.08);pointer-events:none}
   .decline-title{font-family:var(--serif);font-weight:600;color:var(--bone);
     font-size:clamp(1.05rem,2.2vw,1.35rem);letter-spacing:.02em;margin:.5rem 0 1.3rem;line-height:1.3}
   .chart-svg{width:100%;height:auto;display:block}
@@ -813,6 +835,20 @@
 
   /* ---- Bundle & Save ---- */
   .bundle-kicker{display:block;margin-bottom:1.1rem}
+  /* purchase-mode toggle (One-Time / Subscribe & Save) — mirrors shop.html */
+  .purchase-mode{display:flex;gap:.4rem;margin:.9rem 0 1.05rem;padding:.32rem;
+    background:rgba(14,14,16,.07);border:1px solid rgba(14,14,16,.16)}
+  .pm-tab{flex:1;font-family:var(--head);font-weight:600;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:.72em .4em;background:transparent;border:0;cursor:pointer;color:#55524E;
+    transition:background .25s var(--ease),color .25s var(--ease)}
+  .pm-tab b{font-weight:700}
+  .pm-tab:hover{color:#1a1817}
+  .pm-tab.active{background:var(--gold-grad);color:#fff;box-shadow:0 8px 20px -8px rgba(163,22,33,.7)}
+  .pm-tab:focus-visible{outline:2px solid var(--oxblood);outline-offset:2px}
+  .sub-perks{display:none;margin:-.2rem 0 1rem;font-family:var(--sans);font-size:.74rem;letter-spacing:.03em;
+    color:var(--oxblood);text-align:center;line-height:1.6}
+  .buy-box.sub-mode .sub-perks{display:block}
+  @media(max-width:430px){.pm-tab{font-size:.68rem;letter-spacing:.04em;padding:.72em .3em;white-space:nowrap}}
   .bundles{display:flex;flex-direction:column;gap:.9rem;margin-bottom:1.3rem}
   .bundle{position:relative;display:flex;align-items:center;gap:1rem;cursor:pointer;
     background:#FFFFFF;border:1px solid rgba(20,18,16,.18);padding:1.1rem 1.15rem;
@@ -835,7 +871,7 @@
   .bundle .b-sub{font-family:var(--sans);font-size:.76rem;color:#6E6A66;margin-top:.35rem;font-weight:400}
   .bundle .b-price{text-align:right;flex:0 0 auto}
   .bundle .b-now{font-family:var(--serif);font-weight:700;color:var(--oxblood-bright);font-size:1.28rem}
-  .bundle .b-was{display:block;font-family:var(--sans);font-size:.78rem;color:#9B968F;text-decoration:line-through}
+  .bundle .b-was{display:block;font-family:var(--sans);font-size:.78rem;color:#6E6A66;text-decoration:line-through}
   .bundle .ribbon{position:absolute;top:-9px;right:14px;font-family:var(--sans);font-size:.58rem;
     letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--bone);
     background:var(--gold-grad);padding:.3em .75em;box-shadow:0 4px 14px rgba(0,0,0,.45)}
@@ -872,7 +908,7 @@
     display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;margin-top:.1rem;
     box-shadow:0 4px 12px -4px rgba(224,31,39,.7)}
   .buy-box .b-now{font-size:1.42rem}
-  .buy-box .bundle-kicker{color:var(--oxblood-bright)}
+  .buy-box .bundle-kicker{color:var(--oxblood)}
   .buy-box .btn-blood{box-shadow:0 14px 34px -10px rgba(163,22,33,.75)}
   .artifact-tag{color:var(--bone);letter-spacing:.26em}
   .pillars{background:transparent;padding-top:.4rem;padding-bottom:clamp(3.5rem,7vw,6rem)}
@@ -889,8 +925,8 @@
   .pillar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.3rem}
   .pillar{
     text-align:center;padding:2.3rem 1.4rem;
-    border:1px solid rgba(0,0,0,.4);
-    background:linear-gradient(165deg,#606064,#47474B);
+    border:1px solid rgba(243,242,239,.1);
+    background:linear-gradient(165deg,#26262B,#17171A);
     position:relative;transition:all .45s var(--ease);
   }
   .pillar:hover{transform:translateY(-6px);border-color:rgba(224,31,39,.6);box-shadow:0 20px 40px -18px rgba(0,0,0,.7)}
@@ -931,7 +967,7 @@
   @media(max-width:820px){.ing-wrap{grid-template-columns:1fr}}
 
   /* ---------- PROTOCOL ---------- */
-  .protocol{background:linear-gradient(180deg,var(--char-000),var(--char-850))}
+  .protocol{border-top:1px solid rgba(224,31,39,.12);background:linear-gradient(180deg,var(--char-000),var(--char-850))}
   .protocol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem}
   .step{
     padding:2.2rem 1.7rem;
@@ -1029,8 +1065,7 @@
   }
   .creed-crest{height:150px;width:auto;margin:0 auto 2rem;display:block;filter:drop-shadow(0 14px 30px rgba(0,0,0,.55)) drop-shadow(0 0 24px rgba(224,31,39,.12))}
   .code-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin-top:2.4rem}
-  .code-tags span{font-family:var(--head);font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(224,31,39,.4);padding:.6em 1.15em;border-radius:2px;transition:all .3s var(--ease)}
-  .code-tags span:hover{border-color:var(--gold);background:rgba(224,31,39,.08)}
+  .code-tags span{font-family:var(--head);font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(224,31,39,.4);padding:.6em 1.15em;border-radius:2px}
   .creed-intro{
     text-align:center;font-family:var(--editorial);font-size:clamp(.98rem,2vw,1.18rem);
     color:var(--bone-dim);line-height:1.75;margin-bottom:2.2rem;font-weight:300;
@@ -1056,7 +1091,7 @@
   }
 
   /* ---------- RESULTS ---------- */
-  .results{background:linear-gradient(180deg,var(--char-000),var(--char-850))}
+  .results{border-top:1px solid rgba(224,31,39,.12);background:linear-gradient(180deg,var(--char-000),var(--char-850))}
   .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
   .testimonial{
     padding:2.2rem 2rem;
@@ -1074,7 +1109,7 @@
     font-family:var(--serif);font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
     color:var(--gold-soft);
   }
-  .illus{text-align:center;margin-top:2.4rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-dim)}
+  .illus{text-align:center;margin-top:2.4rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
 
   /* --- Cinematic tub hero (replaces the low-res composite image) --- */
   .tub-stage{position:relative;max-width:430px;margin:0 auto;padding:2.6rem 0 2.4rem;
@@ -1218,11 +1253,11 @@
   .ebook-form input::placeholder{color:var(--grey-dim)}
   .ebook-form input:focus{outline:none;border-color:var(--gold)}
   .ebook-form .btn{white-space:nowrap}
-  .ebook-note{margin-top:1rem;font-size:.72rem;letter-spacing:.06em;color:var(--grey-dim)}
+  .ebook-note{margin-top:1rem;font-size:.72rem;letter-spacing:.06em;color:var(--grey)}
   @media(max-width:820px){.ebook-wrap{grid-template-columns:1fr}.ebook-img{margin:0 auto}}
 
   /* ---------- FAQ ---------- */
-  .faq{background:linear-gradient(180deg,var(--char-900),var(--char-000))}
+  .faq{border-top:1px solid rgba(224,31,39,.12);background:linear-gradient(180deg,var(--char-900),var(--char-000))}
   .faq-list{max-width:820px;margin:0 auto}
   .faq-item{
     border:1px solid rgba(243,242,239,.08);
@@ -1286,7 +1321,7 @@
   .foot-brand img{height:38px;filter:drop-shadow(0 0 1px var(--gold));margin-bottom:1rem}
   .foot-brand .tag{
     font-family:var(--head);font-weight:600;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:1rem;
+    color:var(--gold-soft);margin-bottom:1rem;
   }
   .foot-brand .news{font-size:.9rem;color:var(--grey);line-height:1.6;max-width:280px;font-weight:300}
   .foot-col h4{
@@ -1296,7 +1331,7 @@
   .foot-col a{
     display:block;font-size:.9rem;color:var(--bone-dim);padding:.4rem 0;transition:color .3s;font-weight:300;
   }
-  .foot-col a:hover{color:var(--gold)}
+  .foot-col a:hover{color:var(--gold-soft)}
   .foot-pay{
     display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;
     padding:2rem 0;border-top:1px solid rgba(224,31,39,.14);border-bottom:1px solid rgba(224,31,39,.14);
@@ -1312,7 +1347,7 @@
     max-width:900px;margin:0 auto;text-align:center;
   }
   .disclaimer{
-    font-size:.74rem;color:var(--grey-dim);line-height:1.7;font-style:italic;margin-bottom:1.2rem;font-weight:300;
+    font-size:.74rem;color:var(--grey);line-height:1.7;font-style:italic;margin-bottom:1.2rem;font-weight:300;
   }
   .copyright{font-family:var(--head);font-weight:500;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
 
@@ -1324,23 +1359,158 @@
     .foot-top{grid-template-columns:1fr}
     .hero-cta .btn{width:100%;justify-content:center}
   }
+
+  /* ========== MOBILE MARQUEES (rows built by JS at ≤700px) ========== */
+  .marqueed{display:block!important}
+  .mqwrap{overflow:hidden;position:relative;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+  .mqwrap+.mqwrap{margin-top:.7rem}
+  .mqtrack{display:flex;gap:.7rem;width:max-content;animation:mqscroll var(--mq-dur,28s) linear infinite}
+  .mqtrack.rev{animation-direction:reverse}
+  .mqtrack>*{flex:0 0 auto}
+  @keyframes mqscroll{to{transform:translateX(-50%)}}
+  .mqwrap:hover .mqtrack,.mqwrap:active .mqtrack{animation-play-state:paused}
+  @media (prefers-reduced-motion:reduce){.mqtrack{animation:none}.mqwrap{overflow-x:auto;mask-image:none;-webkit-mask-image:none}}
+
+  /* ========== MOBILE COMPACTION (≤700px): sleek, stealth, to the point ========== */
+  @media(max-width:700px){
+    section{padding:2.9rem 0}
+    section[id],[id="top"]{scroll-margin-top:84px}
+    .sec-head{margin-bottom:1.9rem}
+    .sec-head[data-no]::before{font-size:3.8rem;top:-.45em}
+    .kicker{margin-bottom:.9rem;letter-spacing:.26em}
+    .section-title{font-size:clamp(1.65rem,7.2vw,2.15rem)}
+    .sec-head .lead{margin-top:.9rem;font-size:.94rem}
+    .ornament{max-width:240px}
+    /* problem / manifesto */
+    .manifesto-body{font-size:.97rem;line-height:1.7}
+    .stone-quote{margin:2rem auto;padding:1.35rem 1.1rem}
+    .decline{margin-top:2.2rem}
+    .decline-wrap{padding:1.1rem;gap:1.2rem}
+    .decline-stats{gap:1rem .8rem}
+    .dstat .dnum{font-size:1.7rem}
+    .dstat .dlbl{font-size:.62rem;margin-top:.3rem}
+    /* war briefing → numeral rail + detail card */
+    .war-zone{margin-top:2.3rem;padding:1.05rem .85rem}
+    .war-title{font-size:.92rem;letter-spacing:.15em;margin-bottom:1.1rem}
+    .brief-list{display:flex;overflow-x:auto;border-right:none;border-bottom:1px solid rgba(243,242,239,.16);scrollbar-width:none}
+    .brief-list::-webkit-scrollbar{display:none}
+    .brief-list .bl-head{display:none}
+    .brief-item{flex:1 0 auto;width:auto;grid-template-columns:auto;justify-items:center;padding:.72rem .55rem;border-bottom:none;border-right:1px solid rgba(243,242,239,.1)}
+    .brief-item .bi-title{display:none}
+    .brief-item .bi-num{font-size:1.12rem}
+    .brief-detail{padding:1.35rem 1.05rem 1.5rem}
+    .brief-detail .bd-ghost{font-size:6.5rem;bottom:-1.2rem}
+    .brief-detail h4{font-size:1.22rem}
+    .brief-detail .bd-desc{font-size:.92rem;margin-bottom:1.15rem}
+    .closer{margin-top:1.9rem;font-size:.94rem}
+    /* cost → tight 2-col ledger */
+    .cost-list{grid-template-columns:1fr 1fr}
+    .cost-list li{padding:.78rem .7rem;font-size:.76rem;gap:.55rem;line-height:1.35}
+    .cost-list li .x{width:19px;height:19px}
+    .cost-list li .x svg{width:9px;height:9px}
+    .cost-note{margin-top:1.6rem;font-size:.94rem}
+    /* payoff cards (marqueed ×2 rows) */
+    .payoff-card{width:236px;padding:1.05rem .95rem}
+    .payoff-card .idx{margin-bottom:.5rem;font-size:.78rem;padding-bottom:.25rem}
+    .payoff-card h3{font-size:.85rem;margin-bottom:.4rem}
+    .payoff-card p{font-size:.79rem;line-height:1.5}
+    .payoff-line{margin-top:1.8rem;font-size:1rem}
+    /* product */
+    .artifact-tag{letter-spacing:.12em;font-size:.6rem;margin-top:1rem}
+    .buy-box{padding:1.15rem}
+    .prod-desc{font-size:.94rem;margin-top:1.2rem;line-height:1.65}
+    .prod-bullets li{font-size:.9rem;padding:.38rem 0}
+    /* pillars (marqueed ×1 row) */
+    .pillars{padding-bottom:2.4rem}
+    .pillar{width:196px;padding:1.05rem .8rem}
+    .pillar .p-ico{width:42px;height:42px;margin-bottom:.55rem}
+    .pillar .p-ico svg{width:20px;height:20px}
+    .pillar h3{font-size:.78rem;margin-bottom:.35rem}
+    .pillar p{font-size:.73rem;line-height:1.45}
+    /* ingredients */
+    .ing-copy>p{font-size:.94rem;margin-top:1rem;line-height:1.65}
+    .badge-row{gap:.55rem;margin-top:1.1rem}
+    .ing-badge{font-size:.6rem;padding:.5em .8em;letter-spacing:.14em}
+    /* protocol → 2×2 */
+    .protocol-grid{grid-template-columns:1fr 1fr;gap:.7rem}
+    .step{padding:1.05rem .85rem}
+    .step .step-n{font-size:1.65rem;margin-bottom:.35rem}
+    .step h3{font-size:.83rem;margin-bottom:.3rem;letter-spacing:.08em}
+    .step p{font-size:.75rem;line-height:1.5}
+    /* comparison → horizontal scroll, full table preserved */
+    .cmp-scroll{overflow-x:auto;margin:0 calc(-1 * clamp(1.15rem,4vw,2.5rem));padding:0 clamp(1.15rem,4vw,2.5rem);-webkit-overflow-scrolling:touch}
+    .cmp-table{min-width:560px}
+    /* code / creed */
+    .creed{padding:1.35rem 1.05rem}
+    .creed-crest{height:92px;margin-bottom:1.1rem}
+    .creed-intro{font-size:.94rem;margin-bottom:1.1rem;line-height:1.65}
+    .code-tags{margin-top:1.3rem}
+    .code-tags span{white-space:nowrap;font-size:.66rem;padding:.5em .95em}
+    /* results → swipe carousel */
+    .test-grid{display:flex;overflow-x:auto;gap:.85rem;scroll-snap-type:x mandatory;
+      margin:0 calc(-1 * clamp(1.15rem,4vw,2.5rem));padding:0 clamp(1.15rem,4vw,2.5rem) .5rem;scrollbar-width:none}
+    .test-grid::-webkit-scrollbar{display:none}
+    .test-grid .testimonial{flex:0 0 86%;scroll-snap-align:center;opacity:1!important;transform:none!important;padding:1.35rem 1.15rem}
+    .testimonial p{font-size:.92rem;line-height:1.6}
+    .illus{margin-top:1.1rem}
+    /* mission */
+    .mission-body{font-size:.94rem;line-height:1.7}
+    .mission-quote{margin-top:1.7rem;padding-top:1.3rem;font-size:1.05rem}
+    /* guarantee */
+    .guar-badges{gap:1.1rem}
+    .guar-plate{padding:1.5rem 1.3rem 1.3rem}
+    .gp-num{font-size:4.2rem}
+    .gp-days{font-size:.8rem}
+    .cert-row{flex-direction:row;flex-wrap:wrap;justify-content:center;max-width:none;gap:.45rem}
+    .cert-chip{padding:.5rem .65rem;gap:.45rem}
+    .cert-chip span{font-size:.56rem;letter-spacing:.1em}
+    .cert-chip svg{width:15px;height:15px}
+    .guar-copy p{font-size:.94rem;line-height:1.65}
+    /* ebook */
+    .book{width:196px;padding:1.35rem 1rem 3.3rem}
+    .book .bk-title{font-size:1.38rem}
+    .book img{height:54px}
+    .ebook-copy>p{font-size:.94rem;margin-bottom:1.2rem}
+    /* faq */
+    .faq-q{padding:1rem 1.05rem;font-size:.88rem}
+    .faq-a p{padding:0 1.05rem 1.05rem;font-size:.87rem}
+    .faq-item{margin-bottom:.7rem}
+    /* final cta */
+    .final-cta .crest-sm{height:82px;margin-bottom:1rem}
+    .final-cta .sub{margin-bottom:1.5rem;font-size:.95rem}
+    /* footer */
+    footer{padding:2.5rem 0 1.6rem}
+    .foot-top{gap:1.3rem;margin-bottom:1.7rem}
+    .foot-pay{padding:1.1rem 0;margin-bottom:1.2rem}
+    /* sticky buybar: clear iPhone home indicator */
+    .buybar{padding-bottom:calc(.7rem + env(safe-area-inset-bottom))}
+  }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Pure Blood Supps","url":"https://purebloodsupps.com/","logo":"https://purebloodsupps.com/pure_blood_logo_dark.png"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is PureTest natural, or is it a steroid?","acceptedAnswer":{"@type":"Answer","text":"100% natural. No synthetic hormones. Clinically-backed herbs and minerals that support your body's own testosterone production."}},{"@type":"Question","name":"How fast will I feel it?","acceptedAnswer":{"@type":"Answer","text":"Many men feel the energy and focus within days. The deeper testosterone-driven changes compound over 4-8 weeks of consistent daily use."}},{"@type":"Question","name":"Who is PureTest for?","acceptedAnswer":{"@type":"Answer","text":"Any man done feeling tired, soft and flat — and any man who wants to operate at his absolute peak."}},{"@type":"Question","name":"Is it safe and tested?","acceptedAnswer":{"@type":"Answer","text":"Yes. Third-party tested in a NATA-accredited lab. What's on the label is what's in the tub — no fillers, no junk."}},{"@type":"Question","name":"What if it doesn't work for me?","acceptedAnswer":{"@type":"Answer","text":"You're covered by our 60-day money-back guarantee. Zero risk."}},{"@type":"Question","name":"How do I take it?","acceptedAnswer":{"@type":"Answer","text":"Two capsules daily, ideally every morning. One tub is a full 30-day supply. Consistency is everything."}}]}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ============ 0. ANNOUNCEMENT TICKER ============ -->
 <div class="ticker" role="marquee" aria-label="Announcements">
-  <div class="ticker-track" aria-hidden="false">
+  <div class="ticker-track">
     <span>THIRD-PARTY TESTED<i class="sep">✦</i></span>
     <span>60-DAY MONEY-BACK GUARANTEE<i class="sep">✦</i></span>
     <span>FAST &amp; TRACKED SHIPPING<i class="sep">✦</i></span>
     <span>NATA-APPROVED LAB TESTING<i class="sep">✦</i></span>
     <span>JOIN THE BLOODLINE<i class="sep">✦</i></span>
-    <span>THIRD-PARTY TESTED<i class="sep">✦</i></span>
-    <span>60-DAY MONEY-BACK GUARANTEE<i class="sep">✦</i></span>
-    <span>FAST &amp; TRACKED SHIPPING<i class="sep">✦</i></span>
-    <span>NATA-APPROVED LAB TESTING<i class="sep">✦</i></span>
-    <span>JOIN THE BLOODLINE<i class="sep">✦</i></span>
+    <span aria-hidden="true">THIRD-PARTY TESTED<i class="sep">✦</i></span>
+    <span aria-hidden="true">60-DAY MONEY-BACK GUARANTEE<i class="sep">✦</i></span>
+    <span aria-hidden="true">FAST &amp; TRACKED SHIPPING<i class="sep">✦</i></span>
+    <span aria-hidden="true">NATA-APPROVED LAB TESTING<i class="sep">✦</i></span>
+    <span aria-hidden="true">JOIN THE BLOODLINE<i class="sep">✦</i></span>
   </div>
 </div>
 
@@ -1361,7 +1531,7 @@
     </nav>
     <div class="nav-cta">
       <a href="shop.html" class="btn btn-primary">Shop</a>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1376,7 +1546,7 @@
   </nav>
 </header>
 
-<main>
+<main id="main">
 
 <!-- ============ 2. HERO (product-first) ============ -->
 <section class="hero" aria-label="Hero">
@@ -1391,7 +1561,7 @@
     </div>
     <div class="hero-visual reveal d2" aria-label="PureTest product">
       <div class="hero-bottle">
-        <img src="puretest-studio.png" alt="PureTest natural testosterone booster — black bottle, 60 capsules, 1350mg per serving" width="1254" height="1254" fetchpriority="high" />
+        <img src="puretest-studio.jpg" alt="PureTest natural testosterone booster — black bottle, 60 capsules, 1350mg per serving" width="1254" height="1254" fetchpriority="high" />
       </div>
       <div class="hero-buyline">
         <span class="hero-stars" aria-label="Rated 5 out of 5 stars">★★★★★</span>
@@ -1412,22 +1582,20 @@
       </div>
     </div>
   </div>
-  <div class="scroll-hint" aria-hidden="true">
-    <span>Descend</span>
-    <span class="bar"></span>
-  </div>
+  <a class="scroll-hint" href="#problem" aria-label="Scroll to the manifesto">
+    <span aria-hidden="true">Descend</span>
+    <span class="bar" aria-hidden="true"></span>
+  </a>
 </section>
 
 <!-- ============ 3. THE EMERGENCY ============ -->
 <section class="emergency" id="problem" aria-labelledby="emergency-title">
   <div class="container">
     <div class="sec-head reveal" data-no="01">
-      <span class="kicker">An Inconvenient Truth</span>
+      <span class="kicker">The Hard Truth</span>
       <h2 class="section-title" id="emergency-title">They Turned Men Soft —<br><span class="blood-text">On Purpose.</span></h2>
     </div>
-    <div class="ornament reveal"><span class="line"></span><span class="diamond"></span><span class="line rev"></span></div>
-
-    <p class="manifesto-body drop-cap reveal" style="margin-top:2.6rem;">Testosterone in men has collapsed. Studies suggest the average man today carries a fraction of the testosterone his grandfather had at the same age. That's not bad luck — it's the by-product of a world built to keep you docile, distracted, and weak. Soft food. Soft lives. Soft men. We think that's a crime.</p>
+    <p class="manifesto-body drop-cap reveal" style="margin-top:2.2rem;">Testosterone in men has collapsed. Studies suggest the average man today carries a fraction of the testosterone his grandfather had at the same age. That's not bad luck — it's the by-product of a world built to keep you docile, distracted, and weak. Soft food. Soft lives. Soft men. We think that's a crime.</p>
 
     <blockquote class="stone-quote reveal">
       <p><span class="mk">“</span>The modern world is manufacturing weak men. Comfortable. Compliant. Neutered. By design.<span class="mk">”</span></p>
@@ -1451,20 +1619,20 @@
                 <stop offset="100%" stop-color="#A31621"/>
               </linearGradient>
             </defs>
-            <g stroke="#2A2420" stroke-width="1">
+            <g stroke="#26262B" stroke-width="1">
               <line x1="46" y1="40" x2="500" y2="40"/>
               <line x1="46" y1="100" x2="500" y2="100"/>
               <line x1="46" y1="160" x2="500" y2="160"/>
               <line x1="46" y1="220" x2="500" y2="220"/>
               <line x1="46" y1="260" x2="500" y2="260"/>
             </g>
-            <g fill="#7A1016" font-family="'Jost',sans-serif" font-size="10">
+            <g fill="#98979A" font-family="'Jost',sans-serif" font-size="10">
               <text x="8" y="44">700</text>
               <text x="8" y="104">550</text>
               <text x="8" y="164">400</text>
               <text x="8" y="224">250</text>
             </g>
-            <g fill="#8E857A" font-family="'Jost',sans-serif" font-size="10" letter-spacing="1">
+            <g fill="#98979A" font-family="'Jost',sans-serif" font-size="10" letter-spacing="1">
               <text x="44" y="282">1980</text>
               <text x="154" y="282">1995</text>
               <text x="264" y="282">2005</text>
@@ -1593,7 +1761,7 @@
     <div class="payoff-grid">
       <article class="payoff-card reveal"><div class="idx">I.</div><h3>Relentless Drive</h3><p>Wake up with fire. Attack the day instead of surviving it.</p></article>
       <article class="payoff-card reveal d1"><div class="idx">II.</div><h3>Primal Confidence</h3><p>Walk into any room like you own it. Presence people feel before you speak.</p></article>
-      <article class="payoff-card reveal d2"><div class="idx">III.</div><h3>Sexual Dominance</h3><p>Libido, performance, and the raw magnetism women are wired to want.</p></article>
+      <article class="payoff-card reveal d2"><div class="idx">III.</div><h3>Sexual Dominance</h3><p>Libido, performance, and the magnetism that can't be faked.</p></article>
       <article class="payoff-card reveal d3"><div class="idx">IV.</div><h3>Lean, Hard Muscle</h3><p>Build muscle and strip fat the way your body was actually designed to.</p></article>
       <article class="payoff-card reveal"><div class="idx">V.</div><h3>Razor Focus</h3><p>Kill the fog. Think fast, decide hard, execute without hesitation.</p></article>
       <article class="payoff-card reveal d1"><div class="idx">VI.</div><h3>Iron Discipline</h3><p>The self-mastery to lead your family, your business, and your life.</p></article>
@@ -1611,27 +1779,29 @@
       <span class="kicker">The Weapon</span>
       <h2 class="section-title" id="product-title">PureTest — The Ultimate<br><span class="gold-text">Testosterone Weapon</span><br>For Modern Men.</h2>
     </div>
-    <div class="ornament reveal" style="margin-bottom:3rem;"><span class="line"></span><span class="diamond"></span><span class="line rev"></span></div>
-
     <div class="product-wrap">
       <div class="product-visual reveal">
         <div class="gallery">
           <div class="gallery__main">
-            <img id="galleryMain" src="puretest-studio.png" alt="PureTest testosterone booster bottle — 60 capsules, 1350mg per serving" />
+            <img id="galleryMain" src="puretest-studio.jpg" width="1254" height="1254" loading="lazy" decoding="async" alt="PureTest testosterone booster bottle — 60 capsules, 1350mg per serving" />
           </div>
           <div class="gallery__thumbs">
-            <button class="gthumb active" type="button" data-src="puretest-studio.png" aria-label="Studio product shot"><img src="puretest-studio.png" alt="PureTest bottle studio shot" /></button>
-            <button class="gthumb" type="button" data-src="puretest-benefits.jpg" aria-label="Benefits overview"><img src="puretest-benefits.jpg" alt="PureTest benefits: testosterone surge, primal drive, increased energy, mental clarity, immunity armor and quick recovery" /></button>
-            <button class="gthumb" type="button" data-src="puretest-gym.jpg" aria-label="Gym shot with capsules"><img src="puretest-gym.jpg" alt="PureTest bottle in the gym with capsules" /></button>
-            <button class="gthumb" type="button" data-src="puretest-open.jpg" aria-label="Bottle open with capsules"><img src="puretest-open.jpg" alt="PureTest bottle opened beside its capsules" /></button>
-            <button class="gthumb" type="button" data-src="puretest-lineup.jpg" aria-label="Row of bottles"><img src="puretest-lineup.jpg" alt="A row of PureTest bottles" /></button>
+            <button class="gthumb active" type="button" aria-pressed="true" data-src="puretest-studio.jpg" aria-label="Studio product shot"><img src="puretest-studio.jpg" alt="PureTest bottle studio shot" /></button>
+            <button class="gthumb" type="button" aria-pressed="false" data-src="puretest-benefits.jpg" aria-label="Benefits overview"><img loading="lazy" decoding="async" src="puretest-benefits.jpg" alt="PureTest benefits: testosterone surge, primal drive, increased energy, mental clarity, immunity armor and quick recovery" /></button>
+            <button class="gthumb" type="button" aria-pressed="false" data-src="puretest-gym.jpg" aria-label="Gym shot with capsules"><img loading="lazy" decoding="async" src="puretest-gym.jpg" alt="PureTest bottle in the gym with capsules" /></button>
+            <button class="gthumb" type="button" aria-pressed="false" data-src="puretest-open.jpg" aria-label="Bottle open with capsules"><img loading="lazy" decoding="async" src="puretest-open.jpg" alt="PureTest bottle opened beside its capsules" /></button>
+            <button class="gthumb" type="button" aria-pressed="false" data-src="puretest-lineup.jpg" aria-label="Row of bottles"><img loading="lazy" decoding="async" src="puretest-lineup.jpg" alt="A row of PureTest bottles" /></button>
           </div>
         </div>
         <span class="artifact-tag">60 Capsules · 1350mg Per Serving · No Limit. Just Legacy.</span>
       </div>
       <div class="product-info reveal d1">
         <div class="buy-box">
-          <span class="kicker bundle-kicker">Bundle &amp; Save</span>
+          <span class="kicker bundle-kicker" id="buyKicker">Bundle &amp; Save</span>
+          <div class="purchase-mode" role="group" aria-label="Purchase type">
+            <button type="button" class="pm-tab active" id="pmOnce" aria-pressed="true">One-Time Purchase</button>
+            <button type="button" class="pm-tab" id="pmSub" aria-pressed="false">Subscribe &amp; Save <b>15%</b></button>
+          </div>
           <div class="bundles" role="radiogroup" aria-label="Choose your PureTest bundle">
 
             <label class="bundle" data-cta="Add 1 Tub — $79.99">
@@ -1668,14 +1838,16 @@
 
           </div>
 
+          <p class="sub-perks" id="subPerks">Free shipping on every delivery · Pause, skip or cancel anytime · Price locked for life</p>
+
           <div class="bundle-benefits">
             <span class="bb"><b>60-Day</b>Money-Back Guarantee</span>
-            <span class="bb"><b>Free</b>Shipping on 2+ Tubs</span>
-            <span class="bb"><b>Extra 15%</b>Off — Subscribe &amp; Save</span>
+            <span class="bb" id="bbShip"><b>Free</b>Shipping on 2+ Tubs</span>
+            <span class="bb"><b>From $1.60</b>Per Day</span>
           </div>
 
           <a href="shop.html?bundle=2" class="btn btn-blood" id="bundleCta">Add 3 Tubs — $159.98</a>
-          <p class="micro-trust"><span>Third-Party Tested · NATA-Approved · 60-Day Money-Back Guarantee</span><br />Free High-T Blueprint with every order.</p>
+          <p class="micro-trust"><span>Third-Party Tested · NATA-Accredited Lab · 60-Day Money-Back Guarantee</span><br />Free High-T Blueprint with every order.</p>
         </div>
         <p class="prod-desc">60 clinical-grade capsules. 1350mg of no-BS, no-filler firepower per serving. Powerful herbs and minerals men have relied on for centuries — refined for real, measurable performance. This isn't a vitamin. It's a daily weapon. No limit. Just legacy.</p>
         <ul class="prod-bullets">
@@ -1728,7 +1900,7 @@
       <div class="ing-copy reveal">
         <span class="kicker">Clinically Backed</span>
         <h2 class="section-title" id="ing-title">No Filler. No Fluff. <span class="gold-text">Just What Works.</span></h2>
-        <p>Every capsule is loaded with clinically-dosed, third-party-tested ingredients — raw, ancestral compounds men have trusted for centuries, refined for modern performance. NATA-approved lab tested. What's on the label is what's in the tub.</p>
+        <p>Every capsule is loaded with clinically-dosed, third-party-tested ingredients. No proprietary-blend games — what's on the label is what's in the tub, verified in a NATA-accredited lab.</p>
         <div class="badge-row">
           <span class="ing-badge">Third-Party Tested</span>
           <span class="ing-badge">NATA-Approved</span>
@@ -1736,7 +1908,7 @@
         </div>
       </div>
       <div class="ing-panel reveal d1">
-        <img src="puretest-open.jpg" alt="PureTest bottle opened beside its clinical-grade capsules" />
+        <img loading="lazy" decoding="async" src="puretest-open.jpg" alt="PureTest bottle opened beside its clinical-grade capsules" />
       </div>
     </div>
   </div>
@@ -1766,13 +1938,13 @@
       <span class="kicker">No Contest</span>
       <h2 class="section-title" id="compare-title">PureTest vs. <span class="blood-text">Everyone Else.</span></h2>
     </div>
-    <div class="cmp-table reveal">
+    <div class="cmp-scroll"><div class="cmp-table reveal">
       <div class="cmp-head blank"></div>
       <div class="cmp-head us">PureTest</div>
       <div class="cmp-head them">Other Brands</div>
 
       <div class="cmp-feat">Price Per Serving</div>
-      <div class="cmp-cell us">Under $1.60</div>
+      <div class="cmp-cell us">From $1.60</div>
       <div class="cmp-cell them">Over $2.40</div>
 
       <div class="cmp-feat">Filler Ingredients</div>
@@ -1794,7 +1966,7 @@
       <div class="cmp-feat">Guarantee</div>
       <div class="cmp-cell us"><span class="yes">✓</span> 60-day money-back</div>
       <div class="cmp-cell them"><span class="no">✕</span> 30-day guarantee</div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1826,7 +1998,7 @@
     <div class="test-grid">
       <blockquote class="testimonial reveal">
         <div class="t-head">
-          <img class="t-face" src="review-liam.jpg" alt="Liam Carter, PureTest customer" />
+          <img loading="lazy" decoding="async" class="t-face" src="review-liam.jpg" alt="Liam Carter, PureTest customer" />
           <span><span class="t-name">Liam Carter</span><span class="t-sub">PureTest Customer</span></span>
         </div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
@@ -1834,7 +2006,7 @@
       </blockquote>
       <blockquote class="testimonial reveal d1">
         <div class="t-head">
-          <img class="t-face" src="review-marcus.jpg" alt="Marcus James, PureTest customer" />
+          <img loading="lazy" decoding="async" class="t-face" src="review-marcus.jpg" alt="Marcus James, PureTest customer" />
           <span><span class="t-name">Marcus James</span><span class="t-sub">PureTest Customer</span></span>
         </div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
@@ -1842,7 +2014,7 @@
       </blockquote>
       <blockquote class="testimonial reveal d2">
         <div class="t-head">
-          <img class="t-face" src="review-jayden.jpg" alt="Jayden Wells, PureTest customer" />
+          <img loading="lazy" decoding="async" class="t-face" src="review-jayden.jpg" alt="Jayden Wells, PureTest customer" />
           <span><span class="t-name">Jayden Wells</span><span class="t-sub">PureTest Customer</span></span>
         </div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
@@ -1860,7 +2032,6 @@
       <span class="kicker">The Mission</span>
       <h2 class="section-title" id="mission-title">Built For The Men<br><span class="blood-text">The World Gave Up On.</span></h2>
     </div>
-    <div class="ornament reveal" style="margin-bottom:2.6rem;"><span class="line"></span><span class="diamond"></span><span class="line rev"></span></div>
     <p class="mission-body reveal">Pure Blood wasn't built to sell you wellness — it was built to wage war on a modern world engineered to strip men of their power. Processed food. Synthetic hormones. Low-T lifestyles. A culture that quietly rewards weakness. We exist to hand men the tools to fight all of it and win. No fluff. No filler. No apologies. Just raw, clinical-grade formulas for men who refuse to settle for soft.</p>
     <p class="mission-quote reveal">“This isn't wellness — it's war.<br>You either level up, <span>or get left behind.</span>”</p>
   </div>
@@ -1888,7 +2059,7 @@
       <div class="guar-copy reveal d1">
         <span class="kicker">Zero Risk</span>
         <h2 class="section-title" id="guar-title">60 Days. Zero Risk. <span class="gold-text">All Upside.</span></h2>
-        <p>Run the protocol for 60 days. If you don't feel the difference — <b>more drive, more energy, more you</b> — we refund every cent. That's how sure we are. Third-party tested. NATA-approved. Built for men who don't accept excuses.</p>
+        <p>Run the protocol for 60 days. If you don't feel the difference — <b>more drive, more energy, more you</b> — we refund every cent. That's how sure we are. Third-party tested, verified in a NATA-accredited lab. Built for men who don't accept excuses.</p>
       </div>
     </div>
   </div>
@@ -1912,10 +2083,10 @@
         <h2 class="section-title" id="ebook-title">Free: The <span class="gold-text">High-T Blueprint.</span></h2>
         <p>The free field guide to naturally maximizing your testosterone — the food, training, sunlight and sleep protocols that rebuild a man. Yours free with every order, or drop your email and we'll send it now.</p>
         <form class="ebook-form" onsubmit="return handleEbook(event)">
-          <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" required />
+          <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" autocomplete="email" required />
           <button type="submit" class="btn btn-primary">Send Me The Blueprint</button>
         </form>
-        <p class="ebook-note" id="ebookNote">Join the bloodline. No spam. Just war plans.</p>
+        <p class="ebook-note" id="ebookNote" role="status" aria-live="polite">Join the bloodline. No spam. Just war plans.</p>
       </div>
     </div>
   </div>
@@ -1924,7 +2095,7 @@
 <!-- ============ 16. FAQ ============ -->
 <section class="faq" id="faq" aria-labelledby="faq-title">
   <div class="container">
-    <div class="sec-head reveal">
+    <div class="sec-head reveal" data-no="10">
       <span class="kicker">Answers</span>
       <h2 class="section-title" id="faq-title">Frequently Asked <span class="gold-text">Questions.</span></h2>
     </div>
@@ -1939,11 +2110,11 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">Who is PureTest for?<span class="plus" aria-hidden="true"></span></button>
-        <div class="faq-a"><p>Any man done feeling tired, soft and flat — and any man who wants to operate at his absolute peak. Trusted by men (and even some women) for energy, focus and total-body wellness.</p></div>
+        <div class="faq-a"><p>Any man done feeling tired, soft and flat — and any man who wants to operate at his absolute peak.</p></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">Is it safe and tested?<span class="plus" aria-hidden="true"></span></button>
-        <div class="faq-a"><p>Yes. Third-party and NATA-approved lab tested. What's on the label is what's in the tub — no fillers, no junk.</p></div>
+        <div class="faq-a"><p>Yes. Third-party tested in a NATA-accredited lab. What's on the label is what's in the tub — no fillers, no junk.</p></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">What if it doesn't work for me?<span class="plus" aria-hidden="true"></span></button>
@@ -1951,7 +2122,7 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">How do I take it?<span class="plus" aria-hidden="true"></span></button>
-        <div class="faq-a"><p>Daily, as directed on the label, ideally every morning. Consistency is everything.</p></div>
+        <div class="faq-a"><p>Two capsules daily, ideally every morning. One tub is a full 30-day supply. Consistency is everything.</p></div>
       </div>
     </div>
   </div>
@@ -1965,7 +2136,7 @@
     <p class="sub reveal d1">The world made you soft. PureTest helps you take it all back — your drive, your edge, your birthright. The bloodline is calling.</p>
     <div class="hero-cta reveal d2">
       <a href="shop.html" class="btn btn-primary">Shop PureTest — $79.99</a>
-      <a href="#code" class="btn btn-ghost">Join The Bloodline</a>
+      <a href="#ebook" class="btn btn-ghost">Join The Bloodline</a>
     </div>
   </div>
 </section>
@@ -1989,25 +2160,25 @@
       <div class="foot-brand">
         <img src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo" />
         <div class="tag">No Limit. Just Legacy.</div>
-        <p class="news">Join the bloodline. No spam. Just war plans.</p>
+        <p class="news"><a href="#ebook">Join the bloodline. No spam. Just war plans.</a></p>
       </div>
       <div class="foot-col">
-        <h4>Shop</h4>
+        <h3>Shop</h3>
         <a href="shop.html">PureTest</a>
         <a href="#ebook">The Blueprint</a>
       </div>
       <div class="foot-col">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="#mission">About</a>
-        <a href="#shop">Contact</a>
+        <a href="mailto:support@purebloodsupps.com">Contact</a>
         <a href="#code">The Code</a>
       </div>
       <div class="foot-col">
-        <h4>Support</h4>
+        <h3>Support</h3>
         <a href="#faq">FAQ</a>
-        <a href="#shop">Shipping</a>
-        <a href="#shop">Returns</a>
-        <a href="#shop">60-Day Guarantee</a>
+        <a href="shop.html#faq">Shipping</a>
+        <a href="shop.html#faq">Returns</a>
+        <a href="shop.html#faq">60-Day Guarantee</a>
       </div>
     </div>
     <div class="foot-pay" aria-label="Accepted payment methods">
@@ -2121,20 +2292,26 @@
     briefDetails.forEach(function(x, k){ x.classList.toggle('active', k === i); });
   }
   briefItems.forEach(function(b, i){
-    b.addEventListener('click', function(){ setBrief(i); startBriefTimer(); });
+    b.addEventListener('click', function(){ setBrief(i); if(briefTimer){ clearInterval(briefTimer); briefTimer = null; } });
   });
   function startBriefTimer(){
     if(briefTimer){ clearInterval(briefTimer); briefTimer = null; }
     if(reduce || briefItems.length === 0) return;
     briefTimer = setInterval(function(){
-      if(briefHover || document.hidden) return;
+      if(briefHover || !briefVisible || document.hidden) return;
       setBrief((briefIdx + 1) % briefItems.length);
     }, 5000);
   }
   var briefEl = document.querySelector('.brief');
+  var briefVisible = true;
   if(briefEl){
     briefEl.addEventListener('mouseenter', function(){ briefHover = true; });
     briefEl.addEventListener('mouseleave', function(){ briefHover = false; });
+    briefEl.addEventListener('focusin', function(){ briefHover = true; });
+    briefEl.addEventListener('focusout', function(){ briefHover = false; });
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){ briefVisible = en[0].isIntersecting; }, {threshold:.25}).observe(briefEl);
+    }
     startBriefTimer();
   }
 
@@ -2187,28 +2364,84 @@
     chartObs.observe(tline.closest('svg'));
   }
 
-  // Bundle & Save selector
+  // Bundle & Save selector + purchase mode (one-time / subscribe & save 15%)
+  // Mirrors shop.html; the landing CTA deep-links to shop.html carrying bundle + mode.
+  var PRICING = {
+    '1': {
+      once: { now:'$79.99',  was:'$109.99', each:'', sub:'1 Tub \u00b7 1 Month Supply',
+              cta:'Add 1 Tub \u2014 $79.99',        deal:'Buy 1 \u00b7 $79.99' },
+      sub:  { now:'$67.99',  was:'$79.99',  each:'', sub:'1 Tub \u00b7 Delivered Monthly + Free Shipping',
+              cta:'Subscribe \u2014 $67.99 / Month',  deal:'Subscribe \u00b7 1 Tub Monthly \u00b7 $67.99' }
+    },
+    '2': {
+      once: { now:'$159.98', was:'$329.97', each:'$53.33 / tub', sub:'3 Tubs \u00b7 3 Month Supply + Free Shipping',
+              cta:'Add 3 Tubs \u2014 $159.98',       deal:'Buy 2, Get 1 Free \u00b7 $159.98' },
+      sub:  { now:'$135.98', was:'$159.98', each:'$45.33 / tub', sub:'3 Tubs \u00b7 Delivered Every 3 Months + Free Shipping',
+              cta:'Subscribe \u2014 $135.98 / 3 Mo',  deal:'Subscribe \u00b7 3 Tubs / 3 Months \u00b7 $135.98' }
+    },
+    '3': {
+      once: { now:'$239.97', was:'',        each:'$47.99 / tub', sub:'5 Tubs \u00b7 5 Month Supply + Free Shipping',
+              cta:'Add 5 Tubs \u2014 $239.97',       deal:'Buy 3, Get 2 Free \u00b7 $239.97' },
+      sub:  { now:'$203.97', was:'$239.97', each:'$40.79 / tub', sub:'5 Tubs \u00b7 Delivered Every 5 Months + Free Shipping',
+              cta:'Subscribe \u2014 $203.97 / 5 Mo',  deal:'Subscribe \u00b7 5 Tubs / 5 Months \u00b7 $203.97' }
+    }
+  };
+  var mode = 'once';
   var bundleEls = document.querySelectorAll('.bundle');
   var bundleCta = document.getElementById('bundleCta');
-  bundleEls.forEach(function(b){
-    b.addEventListener('click', function(){
-      bundleEls.forEach(function(x){ x.classList.remove('selected'); });
-      b.classList.add('selected');
-      var input = b.querySelector('input'); if(input){ input.checked = true; }
-      var label = b.getAttribute('data-cta');
-      if(bundleCta && label){ bundleCta.textContent = label; }
-      var val = b.querySelector('input') ? b.querySelector('input').value : '2';
-      if(bundleCta){ bundleCta.href = 'shop.html?bundle=' + val; }
-      var bbBtn = document.getElementById('buybarBtn');
-      if(bbBtn){ bbBtn.href = 'shop.html?bundle=' + val; }
-      var deal = document.getElementById('buybarDeal');
-      var title = b.querySelector('.b-title');
-      var price = b.querySelector('.b-now');
-      if(deal && title && price){
-        deal.textContent = title.childNodes[0].textContent.trim() + ' \u00b7 ' + price.textContent;
+  var buyBox = document.querySelector('#puretest .buy-box');
+  var buyKicker = document.getElementById('buyKicker');
+  var bbShip = document.getElementById('bbShip');
+  var pmOnce = document.getElementById('pmOnce');
+  var pmSub = document.getElementById('pmSub');
+
+  function bModeSuffix(){ return mode === 'sub' ? '&mode=sub' : ''; }
+  function renderBundlePrices(){
+    bundleEls.forEach(function(b){
+      var input = b.querySelector('input'); if(!input) return;
+      var p = PRICING[input.value] && PRICING[input.value][mode]; if(!p) return;
+      var now = b.querySelector('.b-now');
+      var was = b.querySelector('.b-was');
+      var each = b.querySelector('.each');
+      var subline = b.querySelector('.b-sub');
+      if(now){ now.textContent = p.now; }
+      if(!was && p.was){
+        was = document.createElement('span'); was.className = 'b-was';
+        var wrap = b.querySelector('.b-price'); if(wrap){ wrap.appendChild(was); }
       }
+      if(was){ was.textContent = p.was; was.style.display = p.was ? '' : 'none'; }
+      if(each){ each.textContent = p.each; }
+      if(subline){ subline.textContent = p.sub; }
+      b.setAttribute('data-cta', p.cta);
+      b.setAttribute('data-deal', p.deal);
     });
-  });
+  }
+  function selectBundle(b){
+    bundleEls.forEach(function(x){ x.classList.remove('selected'); });
+    b.classList.add('selected');
+    var input = b.querySelector('input'); if(input){ input.checked = true; }
+    var val = input ? input.value : '2';
+    if(bundleCta){ bundleCta.textContent = b.getAttribute('data-cta'); bundleCta.href = 'shop.html?bundle=' + val + bModeSuffix(); }
+    var bbBtn = document.getElementById('buybarBtn');
+    if(bbBtn){ bbBtn.href = 'shop.html?bundle=' + val + bModeSuffix(); }
+    var deal = document.getElementById('buybarDeal');
+    if(deal){ deal.textContent = b.getAttribute('data-deal'); }
+  }
+  function setBundleMode(m){
+    mode = m;
+    var sub = m === 'sub';
+    if(pmOnce){ pmOnce.classList.toggle('active', !sub); pmOnce.setAttribute('aria-pressed', String(!sub)); }
+    if(pmSub){ pmSub.classList.toggle('active', sub); pmSub.setAttribute('aria-pressed', String(sub)); }
+    if(buyBox){ buyBox.classList.toggle('sub-mode', sub); }
+    if(buyKicker){ buyKicker.textContent = sub ? 'Subscribe & Save 15%' : 'Bundle & Save'; }
+    if(bbShip){ bbShip.innerHTML = sub ? '<b>Free</b>Shipping, Every Order' : '<b>Free</b>Shipping on 2+ Tubs'; }
+    renderBundlePrices();
+    var selEl = document.querySelector('#puretest .bundle.selected') || bundleEls[1] || bundleEls[0];
+    if(selEl){ selectBundle(selEl); }
+  }
+  bundleEls.forEach(function(b){ b.addEventListener('click', function(){ selectBundle(b); }); });
+  if(pmOnce){ pmOnce.addEventListener('click', function(){ setBundleMode('once'); }); }
+  if(pmSub){ pmSub.addEventListener('click', function(){ setBundleMode('sub'); }); }
 
   // Sticky buy bar visibility
   var buybar = document.getElementById('buybar');
@@ -2222,7 +2455,8 @@
     buybar.classList.toggle('show', show);
     buybar.setAttribute('aria-hidden', show ? 'false' : 'true');
   }
-  window.addEventListener('scroll', buybarTick, {passive:true});
+  var bbRaf=false;
+  window.addEventListener('scroll', function(){ if(bbRaf) return; bbRaf=true; requestAnimationFrame(function(){ bbRaf=false; buybarTick(); }); }, {passive:true});
   buybarTick();
 
   // Product image gallery thumbnail swap
@@ -2232,10 +2466,17 @@
     t.addEventListener('click', function(){
       var src = t.getAttribute('data-src'); if(!src || !gMain) return;
       gMain.src = src;
-      gThumbs.forEach(function(x){ x.classList.remove('active'); });
-      t.classList.add('active');
+      var ti = t.querySelector('img'); if(ti && ti.alt){ gMain.alt = ti.alt; }
+      gThumbs.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-pressed','false'); });
+      t.classList.add('active'); t.setAttribute('aria-pressed','true');
     });
   });
+
+  // Pause the ticker marquee while it's scrolled out of view
+  var tkr=document.querySelector('.ticker'), tkt=document.querySelector('.ticker-track');
+  if(tkr && tkt && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ tkt.style.animationPlayState = e[0].isIntersecting ? 'running' : 'paused'; }).observe(tkr);
+  }
 
   // Ebook form
   window.handleEbook = function(e){
@@ -2247,6 +2488,43 @@
     input.value = '';
     return false;
   };
+
+  // Mobile marquees — compact tall grids into auto-scrolling rows
+  var mqMedia = window.matchMedia('(max-width:700px)');
+  function marqueeize(sel, rows){
+    var host = document.querySelector(sel);
+    if(!host || host.dataset.mq) return;
+    var items = Array.prototype.slice.call(host.children);
+    if(items.length < 3) return;
+    host.dataset.mq = '1';
+    host.classList.add('marqueed');
+    var per = Math.ceil(items.length / rows);
+    for(var r = 0; r < rows; r++){
+      var slice = items.slice(r * per, (r + 1) * per);
+      if(!slice.length) continue;
+      var wrap = document.createElement('div'); wrap.className = 'mqwrap';
+      var track = document.createElement('div'); track.className = 'mqtrack' + (r % 2 ? ' rev' : '');
+      track.style.setProperty('--mq-dur', Math.max(20, slice.length * 8) + 's');
+      slice.forEach(function(el){
+        el.classList.remove('reveal','d1','d2','d3','d4');
+        el.classList.add('in');
+        track.appendChild(el);
+      });
+      slice.forEach(function(el){
+        var c = el.cloneNode(true);
+        c.setAttribute('aria-hidden','true');
+        c.querySelectorAll('a,button,input').forEach(function(f){ f.tabIndex = -1; });
+        track.appendChild(c);
+      });
+      wrap.appendChild(track);
+      host.appendChild(wrap);
+    }
+  }
+  if(mqMedia.matches && !reduce){
+    marqueeize('.payoff-grid', 2);
+    marqueeize('.pillars .pillar-grid', 1);
+    marqueeize('.code-tags', 1);
+  }
 })();
 </script>
 </body>
