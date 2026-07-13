@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"Product","name":"PureTest Testosterone Booster","image":["https://purebloodsupps.com/puretest-studio.png"],"description":"PureTest is a clinically-backed, third-party-tested, NATA-approved testosterone booster for men. 60 capsules, 1350mg per serving, no fillers or synthetic hormones.","brand":{"@type":"Brand","name":"Pure Blood Supps"},"sku":"PBS-PURETEST-60","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Liam Carter"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"PureTest is far more potent and energizing than the others. The energizing and focusing effects were strong and long-lasting."},{"@type":"Review","author":{"@type":"Person","name":"Marcus James"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"I've never felt more alive. This supplement made a significant difference in my energy and testosterone levels. Excellent service and an exceptional product."},{"@type":"Review","author":{"@type":"Person","name":"Jayden Wells"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"It truly works. My nutrition has improved dramatically and I feel energized throughout the day."}],"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"79.99","highPrice":"239.97","offerCount":"3","availability":"https://schema.org/InStock","url":"https://purebloodsupps.com/shop"}}
+{"@context":"https://schema.org/","@type":"Product","name":"PureTest Testosterone Booster","image":["https://purebloodsupps.com/puretest-studio.png"],"description":"PureTest is a clinically-backed, third-party-tested, NATA-approved testosterone booster for men. 60 capsules, 1350mg per serving, no fillers or synthetic hormones.","brand":{"@type":"Brand","name":"Pure Blood Supps"},"sku":"PBS-PURETEST-60","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Liam Carter"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"PureTest is far more potent and energizing than the others. The energizing and focusing effects were strong and long-lasting."},{"@type":"Review","author":{"@type":"Person","name":"Marcus James"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"I've never felt more alive. This supplement made a significant difference in my energy and testosterone levels. Excellent service and an exceptional product."},{"@type":"Review","author":{"@type":"Person","name":"Jayden Wells"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"It truly works. My nutrition has improved dramatically and I feel energized throughout the day."}],"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"67.99","highPrice":"239.97","offerCount":"6","availability":"https://schema.org/InStock","url":"https://purebloodsupps.com/shop"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://purebloodsupps.com/"},{"@type":"ListItem","position":2,"name":"Shop","item":"https://purebloodsupps.com/shop"},{"@type":"ListItem","position":3,"name":"PureTest"}]}
@@ -734,6 +734,35 @@
     align-self:center;
   }
   .buy-box .btn{width:100%;justify-content:center;font-size:.9rem;padding:1.15em}
+  /* purchase-mode toggle (One-Time / Subscribe & Save) */
+  .purchase-mode{
+    display:flex;gap:.4rem;
+    margin:.9rem 0 1.05rem;
+    padding:.32rem;
+    background:rgba(14,14,16,.07);
+    border:1px solid rgba(14,14,16,.16);
+  }
+  .pm-tab{
+    flex:1;
+    font-family:var(--head);font-weight:600;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:.72em .4em;
+    background:transparent;border:0;cursor:pointer;
+    color:#55524E;
+    transition:background .25s var(--ease),color .25s var(--ease);
+  }
+  .pm-tab b{font-weight:700}
+  .pm-tab:hover{color:#1a1817}
+  .pm-tab.active{
+    background:var(--gold-grad);color:#fff;
+    box-shadow:0 8px 20px -8px rgba(163,22,33,.7);
+  }
+  .sub-perks{
+    display:none;
+    margin:-.2rem 0 1rem;
+    font-family:var(--sans);font-size:.74rem;letter-spacing:.03em;
+    color:var(--oxblood);text-align:center;line-height:1.6;
+  }
+  .buy-box.sub-mode .sub-perks{display:block}
   .micro-trust{
     margin-top:1.2rem;
     font-family:var(--sans);font-size:.72rem;letter-spacing:.05em;color:#6E6A66;
@@ -1496,7 +1525,11 @@
         <p class="shop-lede">60 clinical-grade capsules. 1350mg of no-filler firepower per serving. The daily testosterone weapon for men who refuse to go soft — clinically-backed, third-party tested, built to bring back the drive.</p>
 
         <div class="buy-box">
-          <span class="kicker bundle-kicker">Bundle &amp; Save</span>
+          <span class="kicker bundle-kicker" id="buyKicker">Bundle &amp; Save</span>
+          <div class="purchase-mode" role="tablist" aria-label="Purchase type">
+            <button type="button" class="pm-tab active" id="pmOnce" role="tab" aria-selected="true">One-Time Purchase</button>
+            <button type="button" class="pm-tab" id="pmSub" role="tab" aria-selected="false">Subscribe &amp; Save <b>15%</b></button>
+          </div>
           <div class="bundles" role="radiogroup" aria-label="Choose your PureTest bundle">
 
             <label class="bundle" data-cta="Add To Cart — $79.99" data-deal="Buy 1 · $79.99">
@@ -1533,9 +1566,11 @@
 
           </div>
 
+          <p class="sub-perks" id="subPerks">Free shipping on every delivery · Pause, skip or cancel anytime · Price locked for life</p>
+
           <div class="bundle-benefits">
             <span class="bb"><b>60-Day</b>Money-Back Guarantee</span>
-            <span class="bb"><b>Free</b>Shipping on 2+ Tubs</span>
+            <span class="bb" id="bbShip"><b>Free</b>Shipping on 2+ Tubs</span>
             <span class="bb"><b>&lt;$1.60</b>Per Day</span>
           </div>
 
@@ -1856,11 +1891,72 @@
     });
   });
 
-  // Bundle selector
+  // Bundle selector + purchase mode (one-time / subscribe & save 15%)
+  var PRICING = {
+    '1': {
+      once: { now:'$79.99',  was:'$109.99', each:'',              sub:'1 Tub · 1 Month Supply',
+              cta:'Add To Cart — $79.99',        deal:'Buy 1 · $79.99' },
+      sub:  { now:'$67.99',  was:'$79.99',  each:'',              sub:'1 Tub · Delivered Monthly + Free Shipping',
+              cta:'Subscribe — $67.99 / Month',  deal:'Subscribe: 1 Tub Monthly · $67.99' }
+    },
+    '2': {
+      once: { now:'$159.98', was:'$329.97', each:'$53.33 / tub',  sub:'3 Tubs · 3 Month Supply + Free Shipping',
+              cta:'Add To Cart — $159.98',       deal:'Buy 2, Get 1 Free · $159.98' },
+      sub:  { now:'$135.98', was:'$159.98', each:'$45.33 / tub',  sub:'3 Tubs · Delivered Every 3 Months + Free Shipping',
+              cta:'Subscribe — $135.98 / 3 Mo',  deal:'Subscribe: 3 Tubs / 3 Months · $135.98' }
+    },
+    '3': {
+      once: { now:'$239.97', was:'',        each:'$47.99 / tub',  sub:'5 Tubs · 5 Month Supply + Free Shipping',
+              cta:'Add To Cart — $239.97',       deal:'Buy 3, Get 2 Free · $239.97' },
+      sub:  { now:'$203.97', was:'$239.97', each:'$40.79 / tub',  sub:'5 Tubs · Delivered Every 5 Months + Free Shipping',
+              cta:'Subscribe — $203.97 / 5 Mo',  deal:'Subscribe: 5 Tubs / 5 Months · $203.97' }
+    }
+  };
+  var mode = 'once';
   var bundleEls = document.querySelectorAll('.bundle');
   var addCart = document.getElementById('addCart');
   var buybarDeal = document.getElementById('buybarDeal');
   var cartNote = document.getElementById('cartNote');
+  var buyBox = document.querySelector('.buy-box');
+  var buyKicker = document.getElementById('buyKicker');
+  var bbShip = document.getElementById('bbShip');
+  var pmOnce = document.getElementById('pmOnce');
+  var pmSub = document.getElementById('pmSub');
+
+  function renderPrices(){
+    bundleEls.forEach(function(b){
+      var input = b.querySelector('input'); if(!input) return;
+      var p = PRICING[input.value] && PRICING[input.value][mode]; if(!p) return;
+      var now = b.querySelector('.b-now');
+      var was = b.querySelector('.b-was');
+      var each = b.querySelector('.each');
+      var subline = b.querySelector('.b-sub');
+      if(now){ now.textContent = p.now; }
+      if(!was && p.was){
+        was = document.createElement('span');
+        was.className = 'b-was';
+        var priceWrap = b.querySelector('.b-price');
+        if(priceWrap){ priceWrap.appendChild(was); }
+      }
+      if(was){ was.textContent = p.was; was.style.display = p.was ? '' : 'none'; }
+      if(each){ each.textContent = p.each; }
+      if(subline){ subline.textContent = p.sub; }
+      b.setAttribute('data-cta', p.cta);
+      b.setAttribute('data-deal', p.deal);
+    });
+  }
+  function setMode(m){
+    mode = m;
+    var sub = m === 'sub';
+    if(pmOnce){ pmOnce.classList.toggle('active', !sub); pmOnce.setAttribute('aria-selected', String(!sub)); }
+    if(pmSub){ pmSub.classList.toggle('active', sub); pmSub.setAttribute('aria-selected', String(sub)); }
+    if(buyBox){ buyBox.classList.toggle('sub-mode', sub); }
+    if(buyKicker){ buyKicker.textContent = sub ? 'Subscribe & Save 15%' : 'Bundle & Save'; }
+    if(bbShip){ bbShip.innerHTML = sub ? '<b>Free</b>Shipping, Every Order' : '<b>Free</b>Shipping on 2+ Tubs'; }
+    renderPrices();
+    var sel = document.querySelector('.bundle.selected');
+    if(sel){ selectBundle(sel); }
+  }
   function selectBundle(b){
     bundleEls.forEach(function(x){ x.classList.remove('selected'); });
     b.classList.add('selected');
@@ -1870,9 +1966,13 @@
     if(cartNote){ cartNote.classList.remove('show'); cartNote.textContent = ''; }
   }
   bundleEls.forEach(function(b){ b.addEventListener('click', function(){ selectBundle(b); }); });
+  if(pmOnce){ pmOnce.addEventListener('click', function(){ setMode('once'); }); }
+  if(pmSub){ pmSub.addEventListener('click', function(){ setMode('sub'); }); }
 
-  // Preselect from ?bundle=N
+  // Preselect from ?bundle=N and ?mode=sub
   var params = new URLSearchParams(window.location.search);
+  var wantedMode = (params.get('mode') || '').toLowerCase();
+  if(wantedMode === 'sub' || wantedMode === 'subscribe'){ setMode('sub'); }
   var wanted = params.get('bundle');
   if(wanted){
     var match = document.querySelector('.bundle input[value="' + wanted + '"]');
@@ -1884,9 +1984,11 @@
     addCart.addEventListener('click', function(){
       var sel = document.querySelector('.bundle.selected');
       var deal = sel ? sel.getAttribute('data-deal') : '';
-      addCart.textContent = 'Added ✓ — Secure Checkout';
+      addCart.textContent = (mode === 'sub' ? 'Subscribed' : 'Added') + ' ✓ — Secure Checkout';
       if(cartNote){
-        cartNote.textContent = 'Added: ' + deal + ' · Covered by the 60-Day Money-Back Guarantee.';
+        cartNote.textContent = (mode === 'sub'
+          ? 'Subscription started: ' + deal + ' · Pause, skip or cancel anytime. Covered by the 60-Day Money-Back Guarantee.'
+          : 'Added: ' + deal + ' · Covered by the 60-Day Money-Back Guarantee.');
         cartNote.classList.add('show');
       }
     });
