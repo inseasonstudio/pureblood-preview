@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Buy PureTest Testosterone Booster for Men | Pure Blood Supps</title>
-<meta name="description" content="Shop PureTest — the clinically-backed, third-party-tested testosterone booster for men who refuse to go soft. 60 capsules, 1350mg per serving. Bundles from $47.99/tub, free shipping on 2+, 60-day money-back guarantee." />
+<meta name="description" content="Shop PureTest testosterone booster — 60 capsules, 1350mg per serving. Bundles from $47.99/tub, free shipping on 2+ tubs, 60-day money-back guarantee." />
 <link rel="canonical" href="https://purebloodsupps.com/shop" />
 <meta name="robots" content="index,follow" />
 <meta property="og:type" content="product" />
@@ -22,7 +22,7 @@
 <link rel="preload" as="image" href="puretest-studio.jpg" fetchpriority="high" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"Product","name":"PureTest Testosterone Booster","image":["https://purebloodsupps.com/puretest-studio.jpg"],"description":"PureTest is a clinically-backed, third-party-tested, testosterone booster for men, tested in a NATA-accredited lab. 60 capsules, 1350mg per serving, no fillers or synthetic hormones.","brand":{"@type":"Brand","name":"Pure Blood Supps"},"sku":"PBS-PURETEST-60","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Liam Carter"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"PureTest is far more potent and energizing than the others. The energizing and focusing effects were strong and long-lasting."},{"@type":"Review","author":{"@type":"Person","name":"Marcus James"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"I've never felt more alive. This supplement made a significant difference in my energy and testosterone levels. Excellent service and an exceptional product."},{"@type":"Review","author":{"@type":"Person","name":"Jayden Wells"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"It truly works. My nutrition has improved dramatically and I feel energized throughout the day."}],"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"67.99","highPrice":"239.97","offerCount":"6","availability":"https://schema.org/InStock","url":"https://purebloodsupps.com/shop"}}
 </script>
@@ -775,6 +775,9 @@
     color:var(--oxblood);text-align:center;line-height:1.6;
   }
   .buy-box.sub-mode .sub-perks{display:block}
+  @media(max-width:430px){.pm-tab{font-size:.68rem;letter-spacing:.04em;padding:.72em .3em;white-space:nowrap}
+    .bundle-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+    .bundle-benefits .bb{min-width:0;font-size:.64rem;letter-spacing:.05em}}
   .micro-trust{
     margin-top:1.2rem;
     font-family:var(--sans);font-size:.72rem;letter-spacing:.05em;color:#6E6A66;
@@ -852,8 +855,13 @@
   .bundle-benefits .bb b{display:block;font-family:var(--serif);color:var(--oxblood-bright);font-size:.95rem;
     margin-bottom:.25rem;letter-spacing:.02em;font-weight:700}
   @media(max-width:520px){
-    .bundle{flex-wrap:wrap}
-    .bundle .b-price{width:100%;text-align:left;padding-left:calc(20px + 1rem)}
+    .bundle{flex-wrap:nowrap;padding:.85rem .8rem;gap:.65rem}
+    .bundle .b-price{width:auto;text-align:right;padding-left:0}
+    .bundle .b-now{font-size:1.08rem}
+    .bundle .b-was{display:inline;font-size:.68rem;margin-left:.4rem}
+    .bundle .b-title{font-size:.88rem;gap:.4rem}
+    .bundle .each{font-size:.62rem;padding:.16em .5em}
+    .bundle .b-sub{font-size:.7rem;margin-top:.2rem}
   }
 
   /* ---------- FIVE PILLARS ---------- */
@@ -1253,7 +1261,8 @@
   .faq-q .plus::before{width:2px;height:16px;transform:translate(-50%,-50%)}
   .faq-q .plus::after{width:16px;height:2px;transform:translate(-50%,-50%)}
   .faq-item.open .plus{transform:rotate(135deg)}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+  .faq-a{max-height:0;overflow:hidden;visibility:hidden;transition:max-height .5s var(--ease),visibility 0s linear .5s}
+  .faq-item.open .faq-a{visibility:visible;transition:max-height .5s var(--ease),visibility 0s}
   .faq-a p{padding:0 1.6rem 1.5rem;color:var(--bone-dim);font-size:.97rem;line-height:1.7;font-weight:300}
 
   /* ---------- FINAL CTA ---------- */
@@ -1295,7 +1304,7 @@
     color:var(--gold);margin-bottom:1rem;
   }
   .foot-brand .news{font-size:.9rem;color:var(--grey);line-height:1.6;max-width:280px;font-weight:300}
-  .foot-col h4{
+  .foot-col h3{
     font-family:var(--head);font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;
     color:var(--gold-soft);margin-bottom:1.2rem;
   }
@@ -1387,7 +1396,7 @@
   .fuel-item .fi-ico{width:46px;height:46px;border:1px solid rgba(243,242,239,.16);
     display:inline-flex;align-items:center;justify-content:center;color:var(--gold-soft)}
   .fuel-item .fi-ico svg{width:23px;height:23px}
-  .fuel-item h4{font-family:var(--head);font-weight:600;font-size:.94rem;letter-spacing:.08em;
+  .fuel-item h3{font-family:var(--head);font-weight:600;font-size:.94rem;letter-spacing:.08em;
     text-transform:uppercase;color:var(--bone);margin-bottom:.15rem}
   .fuel-item p{font-size:.88rem;color:var(--grey);line-height:1.5;margin:0}
   .section-title{font-size:clamp(1.9rem,4vw,3.05rem)}
@@ -1403,8 +1412,8 @@
   <span class="nav-progress" id="navProgress" aria-hidden="true"></span>
   <div class="nav-inner">
     <a href="index.html#top" class="nav-logo" aria-label="Pure Blood Supps home">
-      <img class="nav-emblem" src="crowned-lion.png" alt="" aria-hidden="true" />
-      <img class="nav-wm" src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo" />
+      <img class="nav-emblem" src="crowned-lion.png" alt="" aria-hidden="true"  width="212" height="384" />
+      <img class="nav-wm" src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo"  width="344" height="78" />
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html#problem">The Problem</a>
@@ -1444,7 +1453,7 @@
       <div class="product-visual reveal">
         <div class="gallery">
           <div class="gallery__main">
-            <img id="galleryMain" src="puretest-studio.jpg" alt="PureTest testosterone booster bottle — 60 capsules, 1350mg per serving" />
+            <img id="galleryMain" src="puretest-studio.jpg" width="1254" height="1254" fetchpriority="high" decoding="async" alt="PureTest testosterone booster bottle — 60 capsules, 1350mg per serving" />
           </div>
           <div class="gallery__thumbs">
             <button class="gthumb active" type="button" aria-pressed="true" data-src="puretest-studio.jpg" aria-label="Studio product shot"><img src="puretest-studio.jpg" alt="PureTest bottle studio shot" /></button>
@@ -1551,11 +1560,11 @@
         <h2 class="section-title" id="formula-title">What Every <span class="gold-text">Serving Fuels.</span></h2>
         <p class="editorial" style="color:var(--bone-dim);font-size:1.02rem;line-height:1.7;font-weight:300;margin-top:.8rem;max-width:46ch;">Clinically-dosed, ancestral compounds men have trusted for centuries — refined for real, measurable performance. What's on the label is what's in the tub.</p>
         <div class="fuel-list">
-          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 3 6-7"/><path d="M15 8h4v4"/></svg></span><div><h4>Testosterone Surge</h4><p>Supports your body's own natural T production.</p></div></div>
-          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.6 2.5 2.5 3.9 3.6 5.6A5 5 0 1 1 7 12c0-1.4.6-2.7 1.6-3.7.3 1 .9 1.7 1.7 2.2C11.4 8.7 11 6 12 3z"/></svg></span><div><h4>Primal Drive</h4><p>Ignites libido and restores sexual confidence.</p></div></div>
-          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h5l-1 9 8-12h-5l1-8z"/></svg></span><div><h4>Relentless Energy</h4><p>Sustained power through training, work and life.</p></div></div>
-          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.6.5.8 1.2.8 2v.4h6v-.4c0-.8.2-1.5.8-2A6 6 0 0 0 12 3z"/></svg></span><div><h4>Mental Edge</h4><p>Sharp focus, enhanced memory, killer confidence.</p></div></div>
-          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8-8 11-4.6-3-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Immune Armor</h4><p>Resilience and inflammation support, inside and out.</p></div></div>
+          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 3 6-7"/><path d="M15 8h4v4"/></svg></span><div><h3>Testosterone Surge</h3><p>Supports your body's own natural T production.</p></div></div>
+          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.6 2.5 2.5 3.9 3.6 5.6A5 5 0 1 1 7 12c0-1.4.6-2.7 1.6-3.7.3 1 .9 1.7 1.7 2.2C11.4 8.7 11 6 12 3z"/></svg></span><div><h3>Primal Drive</h3><p>Ignites libido and restores sexual confidence.</p></div></div>
+          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h5l-1 9 8-12h-5l1-8z"/></svg></span><div><h3>Relentless Energy</h3><p>Sustained power through training, work and life.</p></div></div>
+          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.6.5.8 1.2.8 2v.4h6v-.4c0-.8.2-1.5.8-2A6 6 0 0 0 12 3z"/></svg></span><div><h3>Mental Edge</h3><p>Sharp focus, enhanced memory, killer confidence.</p></div></div>
+          <div class="fuel-item"><span class="fi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8-8 11-4.6-3-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3>Immune Armor</h3><p>Resilience and inflammation support, inside and out.</p></div></div>
         </div>
       </div>
     </div>
@@ -1667,7 +1676,7 @@
 
 <!-- STICKY BUY BAR -->
 <div class="buybar" id="buybar" aria-hidden="true">
-  <img src="crowned-lion.png" alt="" class="bb-crest" />
+  <img src="crowned-lion.png" alt="" class="bb-crest"  width="212" height="384" />
   <div class="bb-info">
     <span class="bb-name">PureTest</span>
     <span class="bb-deal" id="buybarDeal">Buy 2, Get 1 Free · $159.98</span>
@@ -1680,23 +1689,23 @@
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <img src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo" />
+        <img src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo"  width="344" height="78" />
         <div class="tag">No Limit. Just Legacy.</div>
         <p class="news">Join the bloodline. No spam. Just war plans.</p>
       </div>
       <div class="foot-col">
-        <h4>Shop</h4>
+        <h3>Shop</h3>
         <a href="shop.html">PureTest</a>
         <a href="index.html#ebook">The Blueprint</a>
       </div>
       <div class="foot-col">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="index.html#mission">About</a>
         <a href="index.html#code">The Code</a>
         <a href="index.html#problem">The Problem</a>
       </div>
       <div class="foot-col">
-        <h4>Support</h4>
+        <h3>Support</h3>
         <a href="#faq">FAQ</a>
         <a href="#faq">Shipping</a>
         <a href="#faq">Returns</a>
@@ -1742,6 +1751,11 @@
     var open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open ? 'true':'false');
   });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && menu.classList.contains('open')){
+      menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); burger.focus();
+    }
+  });
   menu.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
       menu.classList.remove('open');
@@ -1749,9 +1763,10 @@
     });
   });
 
-  document.querySelectorAll('.faq-item').forEach(function(item){
+  document.querySelectorAll('.faq-item').forEach(function(item, fi){
     var btn = item.querySelector('.faq-q');
     var ans = item.querySelector('.faq-a');
+    ans.id = 'shop-faq-a-' + fi; btn.setAttribute('aria-controls', ans.id);
     btn.addEventListener('click', function(){
       var isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(function(other){

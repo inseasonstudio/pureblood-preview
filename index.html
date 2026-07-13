@@ -22,7 +22,7 @@
 <link rel="preload" as="image" href="puretest-studio.jpg" fetchpriority="high" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
 <style>
   :root{
     --char-000:#0B0B0C;
@@ -379,18 +379,18 @@
     height:clamp(64px,8.5vh,96px);width:auto;
     margin:0 0 1rem;
     position:relative;display:inline-block;
-    animation:crestGlow 5s ease-in-out infinite;
   }
-  .crest::before{content:none}
+  .crest::after{
+    content:"";position:absolute;inset:-25% -35%;z-index:1;pointer-events:none;
+    background:radial-gradient(circle at 50% 48%, rgba(224,31,39,.30), transparent 62%);
+    opacity:.4;animation:crestGlow 5s ease-in-out infinite;
+  }
   .crest img{
     height:100%;width:auto;display:block;
-    filter:drop-shadow(0 12px 26px rgba(0,0,0,.55)) drop-shadow(0 0 22px rgba(224,31,39,.12));
+    filter:drop-shadow(0 12px 26px rgba(0,0,0,.55));
     position:relative;z-index:2;
   }
-  @keyframes crestGlow{
-    0%,100%{filter:drop-shadow(0 0 14px rgba(224,31,39,.15))}
-    50%{filter:drop-shadow(0 0 26px rgba(224,31,39,.35))}
-  }
+  @keyframes crestGlow{0%,100%{opacity:.4}50%{opacity:1}}
   .hero-eyebrow{
     font-family:var(--head);font-weight:500;
     font-size:clamp(.7rem,1.7vw,.84rem);
@@ -473,7 +473,7 @@
   .reveal.d4{transition-delay:.32s}
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1!important;transform:none!important;transition:none!important}
-    .crest,.scroll-hint .bar{animation:none!important}
+    .crest::after,.scroll-hint .bar{animation:none!important}
   }
 
   /* ---------- Section head ---------- */
@@ -882,8 +882,13 @@
   .bundle-benefits .bb b{display:block;font-family:var(--serif);color:var(--oxblood-bright);font-size:.95rem;
     margin-bottom:.25rem;letter-spacing:.02em;font-weight:700}
   @media(max-width:520px){
-    .bundle{flex-wrap:wrap}
-    .bundle .b-price{width:100%;text-align:left;padding-left:calc(20px + 1rem)}
+    .bundle{flex-wrap:nowrap;padding:.85rem .8rem;gap:.65rem}
+    .bundle .b-price{width:auto;text-align:right;padding-left:0}
+    .bundle .b-now{font-size:1.08rem}
+    .bundle .b-was{display:inline;font-size:.68rem;margin-left:.4rem}
+    .bundle .b-title{font-size:.88rem;gap:.4rem}
+    .bundle .each{font-size:.62rem;padding:.16em .5em}
+    .bundle .b-sub{font-size:.7rem;margin-top:.2rem}
   }
 
   /* ---------- FIVE PILLARS ---------- */
@@ -1282,7 +1287,8 @@
   .faq-q .plus::before{width:2px;height:16px;transform:translate(-50%,-50%)}
   .faq-q .plus::after{width:16px;height:2px;transform:translate(-50%,-50%)}
   .faq-item.open .plus{transform:rotate(135deg)}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+  .faq-a{max-height:0;overflow:hidden;visibility:hidden;transition:max-height .5s var(--ease),visibility 0s linear .5s}
+  .faq-item.open .faq-a{visibility:visible;transition:max-height .5s var(--ease),visibility 0s}
   .faq-a p{padding:0 1.6rem 1.5rem;color:var(--bone-dim);font-size:.97rem;line-height:1.7;font-weight:300}
 
   /* ---------- FINAL CTA ---------- */
@@ -1519,8 +1525,8 @@
   <span class="nav-progress" id="navProgress" aria-hidden="true"></span>
   <div class="nav-inner">
     <a href="#top" class="nav-logo" aria-label="Pure Blood Supps home">
-      <img class="nav-emblem" src="crowned-lion.png" alt="" aria-hidden="true" />
-      <img class="nav-wm" src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo" />
+      <img class="nav-emblem" src="crowned-lion.png" alt="" aria-hidden="true"  width="212" height="384" />
+      <img class="nav-wm" src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo"  width="344" height="78" />
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#puretest">PureTest</a>
@@ -1553,7 +1559,7 @@
   <div class="hero-inner hero-grid">
     <div class="hero-head">
       <div class="crest reveal">
-        <img src="crowned-lion.png" alt="Pure Blood crowned lion emblem with red eyes" />
+        <img src="crowned-lion.png" alt="Pure Blood crowned lion emblem with red eyes"  width="212" height="384" />
       </div>
       <div class="hero-eyebrow reveal d1">Natural Testosterone Booster · 60 Capsules · 1350mg</div>
       <h1 class="reveal d1">Reclaim What The Modern World <span class="blood-text">Stole From You.</span></h1>
@@ -1978,7 +1984,7 @@
       <h2 class="section-title" id="code-title">Draw The <span class="gold-text">Line.</span></h2>
     </div>
     <div class="creed reveal">
-      <img class="creed-crest" src="crowned-lion.png" alt="Pure Blood crowned lion emblem" />
+      <img class="creed-crest" src="crowned-lion.png" alt="Pure Blood crowned lion emblem"  width="212" height="384" />
       <p class="creed-intro">Pure Blood isn't something you take — it's a line you draw. On one side is the soft, sedated, autopilot life the modern world hands every man by default. On the other is the man who trains, eats, sleeps and moves like his edge depends on it. Because it does.</p>
       <p class="creed-intro" style="margin-top:1.4rem;">PureTest fuels the second man. Which side of the line you stand on is the only question that matters.</p>
       <div class="code-tags">
@@ -2071,7 +2077,7 @@
     <div class="ebook-wrap">
       <div class="ebook-img reveal">
         <div class="book" role="img" aria-label="The High-T Blueprint ebook cover">
-          <img src="crowned-lion.png" alt="" aria-hidden="true" />
+          <img src="crowned-lion.png" alt="" aria-hidden="true"  width="212" height="384" />
           <div class="bk-kicker">Pure Blood Supps</div>
           <div class="bk-title">The High-T <span>Blueprint</span></div>
           <div class="bk-sub">Rebuild the man the modern world buried.</div>
@@ -2131,7 +2137,7 @@
 <!-- ============ 17. FINAL CTA ============ -->
 <section class="final-cta" id="shop" aria-labelledby="final-title">
   <div class="container">
-    <img class="crest-sm reveal" src="crowned-lion.png" alt="Pure Blood crowned lion emblem" />
+    <img class="crest-sm reveal" src="crowned-lion.png" alt="Pure Blood crowned lion emblem"  width="212" height="384" />
     <h2 class="reveal" id="final-title">Level Up — Or <span class="blood-text">Get Left Behind.</span></h2>
     <p class="sub reveal d1">The world made you soft. PureTest helps you take it all back — your drive, your edge, your birthright. The bloodline is calling.</p>
     <div class="hero-cta reveal d2">
@@ -2145,7 +2151,7 @@
 
 <!-- Sticky buy bar -->
 <div class="buybar" id="buybar" aria-hidden="true">
-  <img src="crowned-lion.png" alt="" class="bb-crest" />
+  <img src="crowned-lion.png" alt="" class="bb-crest"  width="212" height="384" />
   <div class="bb-info">
     <span class="bb-name">PureTest</span>
     <span class="bb-deal" id="buybarDeal">Buy 2, Get 1 Free · $159.98</span>
@@ -2158,7 +2164,7 @@
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <img src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo" />
+        <img src="pure_blood_logo_dark.png" alt="Pure Blood Supps wordmark logo"  width="344" height="78" />
         <div class="tag">No Limit. Just Legacy.</div>
         <p class="news"><a href="#ebook">Join the bloodline. No spam. Just war plans.</a></p>
       </div>
@@ -2235,11 +2241,17 @@
       burger.setAttribute('aria-expanded','false');
     });
   });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && menu.classList.contains('open')){
+      menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); burger.focus();
+    }
+  });
 
   // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(function(item){
+  document.querySelectorAll('.faq-item').forEach(function(item, fi){
     var btn = item.querySelector('.faq-q');
     var ans = item.querySelector('.faq-a');
+    ans.id = 'faq-a-' + fi; btn.setAttribute('aria-controls', ans.id);
     btn.addEventListener('click', function(){
       var isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(function(other){
@@ -2288,9 +2300,28 @@
   var briefHover = false;
   function setBrief(i){
     briefIdx = i;
-    briefItems.forEach(function(x, k){ x.classList.toggle('active', k === i); });
+    briefItems.forEach(function(x, k){
+      x.classList.toggle('active', k === i);
+      x.setAttribute('aria-selected', k === i ? 'true' : 'false');
+      x.tabIndex = k === i ? 0 : -1;
+    });
     briefDetails.forEach(function(x, k){ x.classList.toggle('active', k === i); });
   }
+  (function briefAria(){
+    var list = document.querySelector('.brief-list');
+    if(list){ list.setAttribute('role','tablist'); list.setAttribute('aria-orientation','vertical'); list.setAttribute('aria-label','Six threats to your testosterone');
+      var head = list.querySelector('.bl-head'); if(head){ head.setAttribute('role','presentation'); } }
+    briefItems.forEach(function(b, k){
+      b.setAttribute('role','tab'); b.id = 'briefTab' + k; b.setAttribute('aria-controls','briefPanel' + k);
+      b.setAttribute('aria-selected', k === 0 ? 'true' : 'false'); b.tabIndex = k === 0 ? 0 : -1;
+      b.addEventListener('keydown', function(e){
+        var d = (e.key==='ArrowDown'||e.key==='ArrowRight')?1:(e.key==='ArrowUp'||e.key==='ArrowLeft')?-1:0;
+        if(d){ e.preventDefault(); var n=(k+d+briefItems.length)%briefItems.length; setBrief(n); briefItems[n].focus();
+          if(briefTimer){ clearInterval(briefTimer); briefTimer = null; } }
+      });
+    });
+    briefDetails.forEach(function(p, k){ p.setAttribute('role','tabpanel'); p.id = 'briefPanel' + k; p.setAttribute('aria-labelledby','briefTab' + k); p.tabIndex = 0; });
+  })();
   briefItems.forEach(function(b, i){
     b.addEventListener('click', function(){ setBrief(i); if(briefTimer){ clearInterval(briefTimer); briefTimer = null; } });
   });
